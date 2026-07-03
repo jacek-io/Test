@@ -27,8 +27,8 @@ export function Sidebar() {
         <Image
           src="/idego-logo.svg"
           alt="Idego"
-          width={120}
-          height={32}
+          width={100}
+          height={37}
           priority
         />
       </div>
