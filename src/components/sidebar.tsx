@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
@@ -22,11 +23,14 @@ const navItems = [
 export function Sidebar() {
   return (
     <aside className="hidden lg:flex lg:flex-col lg:w-64 bg-[var(--sidebar)] text-[var(--sidebar-foreground)]">
-      <div className="flex items-center gap-3 px-6 py-5 border-b border-[var(--sidebar-border)]">
-        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[var(--sidebar-primary)] text-[var(--sidebar-primary-foreground)] font-semibold text-sm">
-          I
-        </div>
-        <span className="text-base font-semibold text-white">Idego Finance</span>
+      <div className="flex items-center px-6 py-5 border-b border-[var(--sidebar-border)]">
+        <Image
+          src="/idego-logo.svg"
+          alt="Idego"
+          width={120}
+          height={32}
+          priority
+        />
       </div>
       <nav className="flex-1 px-3 py-4 space-y-1">
         {navItems.map((item) => (

@@ -6,15 +6,15 @@
   --radius: 0.75rem;
 
   --background: #ffffff;
-  --foreground: #1d1f5a;
-  --card: #ffffff;                       --card-foreground: #1d1f5a;
-  --popover: #ffffff;                    --popover-foreground: #1d1f5a;
+  --foreground: #16181f;
+  --card: #ffffff;                       --card-foreground: #16181f;
+  --popover: #ffffff;                    --popover-foreground: #16181f;
 
-  --primary: #1d1f5a;                    --primary-foreground: #ffffff;
-  --primary-weak: #e6e7f0;
-  --primary-strong: #16183f;
+  --primary: #16181f;                    --primary-foreground: #ffffff;
+  --primary-weak: #e4e5ea;
+  --primary-strong: #0e1015;
 
-  --secondary: #f5f9fe;                  --secondary-foreground: #1d1f5a;
+  --secondary: #f5f9fe;                  --secondary-foreground: #16181f;
   --muted: #f5f9fe;                      --muted-foreground: #6b7a8f;
   --subtle-foreground: #98a6bd;
   --accent: #d4f2f7;                     --accent-foreground: #1a6b7a;
@@ -23,21 +23,21 @@
   --border: #d9e6f5;                     --border-strong: #c6d4ea;      --input: #c6d4ea;
   --ring: #3cc2d9;
 
-  --sidebar: #1d1f5a;
-  --sidebar-foreground: #c9cde8;
+  --sidebar: #16181f;
+  --sidebar-foreground: #b0b4c4;
   --sidebar-primary: #3cc2d9;            --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2a2d6e;             --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #2e3170;             --sidebar-ring: #3cc2d9;
+  --sidebar-accent: #22252e;             --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #2a2d38;             --sidebar-ring: #3cc2d9;
 
   --st-live-fg: #027a48;   --st-live-bg: #d1fadf;   --st-live-dot: #12b76a;
   --st-build-fg: #1a6b7a;  --st-build-bg: #d4f2f7;  --st-build-dot: #3cc2d9;
-  --st-queue-fg: #6b7a8f;  --st-queue-bg: #f5f9fe;  --st-queue-dot: #98a6bd;
+  --st-queue-fg: #6b7a8f;  --st-queue-bg: #f5f9fe;   --st-queue-dot: #98a6bd;
   --st-fail-fg: #b82425;   --st-fail-bg: #fee5e5;   --st-fail-dot: #ef5152;
   --st-roll-fg: #92400e;   --st-roll-bg: #fef3c7;   --st-roll-dot: #f59e0b;
 
-  --chart-navy: #1d1f5a;
+  --chart-navy: #16181f;
   --chart-turquoise: #3cc2d9;
-  --chart-navy-light: #e6e7f0;
+  --chart-navy-light: #e4e5ea;
   --chart-turquoise-light: #d4f2f7;
 }
 
