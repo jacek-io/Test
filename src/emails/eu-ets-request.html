@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>EU ETS Request</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+  </style>
+  <!--[if mso]>
+  <style>
+    table, td, th { font-family: Arial, sans-serif !important; }
+  </style>
+  <![endif]-->
+</head>
+<body style="margin:0; padding:0; background-color:#f3f4f6; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f3f4f6;">
+    <tr>
+      <td align="center" style="padding:32px 16px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="744" style="max-width:744px; width:100%; background-color:#ffffff;">
+
+          <!-- ============================================ -->
+          <!-- HEADER -->
+          <!-- ============================================ -->
+          <tr>
+            <td style="padding:32px 40px 0 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td width="36" valign="middle">
+                    <!-- Logo placeholder: replace src with system logo URL -->
+                    <img src="{{logoUrl}}" alt="ISM Manager" width="36" height="36" style="display:block; border:0;" />
+                  </td>
+                  <td align="center" valign="middle" style="font-family:'Poppins',Arial,sans-serif; font-size:20px; font-weight:700; color:#030712; letter-spacing:-0.2px; line-height:1.35;">
+                    EU ETS request
+                  </td>
+                  <td width="58" align="right" valign="middle" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; font-weight:400; color:#030712;">
+                    <!-- Page number only relevant for PDF; hidden or ignored in email -->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================ -->
+          <!-- SENT BY / SHIP DETAILS -->
+          <!-- ============================================ -->
+          <tr>
+            <td style="padding:64px 40px 0 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td width="50%" valign="top" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">
+                    <strong>Sent by:</strong><br />
+                    {{sentBy}}
+                  </td>
+                  <td width="50%" valign="top" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">
+                    <strong>Ship details:</strong>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:4px;">
+                      <tr>
+                        <td width="160" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">Ship name:</td>
+                        <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">{{shipName}}</td>
+                      </tr>
+                      <tr>
+                        <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">Ship IMO:</td>
+                        <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">{{shipImo}}</td>
+                      </tr>
+                      <tr>
+                        <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">Registered owner:</td>
+                        <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">{{registeredOwner}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================ -->
+          <!-- REQUEST TO / REQUEST DETAILS -->
+          <!-- ============================================ -->
+          <tr>
+            <td style="padding:32px 40px 0 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td width="50%" valign="top" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">
+                    <strong>Request to:</strong><br />
+                    {{requestToName}}<br />
+                    {{requestToAddress}}
+                  </td>
+                  <td width="50%" valign="top" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">
+                    <strong>Request details:</strong>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:4px;">
+                      <tr>
+                        <td width="160" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">Request number:</td>
+                        <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">{{requestNumber}}</td>
+                      </tr>
+                      <tr>
+                        <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">Date time [UTC]:</td>
+                        <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">{{requestDateTime}}</td>
+                      </tr>
+                      <tr>
+                        <td valign="top" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">Request period [UTC]:</td>
+                        <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; line-height:1.55;">
+                          {{requestPeriodStart}}<br />
+                          {{requestPeriodEnd}}
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================ -->
+          <!-- EU ETS DETAILS TABLE -->
+          <!-- ============================================ -->
+          <tr>
+            <td style="padding:32px 40px 0 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+                <!-- Section header -->
+                <tr>
+                  <td colspan="2" style="font-family:'Poppins',Arial,sans-serif; font-size:13px; font-weight:700; color:#030712; padding:10px 8px; border-bottom:1px solid #030712;">
+                    &#8250;&nbsp; EU ETS details*
+                  </td>
+                </tr>
+                <!-- Row: Total EUA required -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    Total EUA required for period
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    {{totalEuaRequired}}
+                  </td>
+                </tr>
+                <!-- Row: EUA allocated to off-hire -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    EUA allocated to off-hire periods
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    {{euaOffHire}}
+                  </td>
+                </tr>
+                <!-- Row: EUA covered by pre-payments -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    EUA covered by pre-payments balance
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    {{euaPrePayments}}
+                  </td>
+                </tr>
+                <!-- Row: New pre-payment balance -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    New pre-payment balance <span style="font-size:8px; color:#4a5565;">[EUA]</span>
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    {{newPrePaymentBalance}}
+                  </td>
+                </tr>
+                <!-- Row: Equivalent number of EUA -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:12px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    Equivalent number of EUA
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    {{equivalentEua}}
+                  </td>
+                </tr>
+                <!-- Row: Average underlying EUA price -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:12px; color:#030712; padding:11px 8px; border-bottom:1px solid #030712;">
+                    Average underlying EUA price
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #030712;">
+                    {{averageEuaPrice}}
+                  </td>
+                </tr>
+                <!-- Highlight row: Fund to be delivered -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:13px; font-weight:700; color:#030712; padding:16px 8px; border-bottom:1px solid #030712; background-color:#f0f7eb;">
+                    Fund to be delivered:
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:13px; font-weight:700; color:#030712; padding:16px 8px; border-bottom:1px solid #030712; background-color:#f0f7eb;">
+                    {{fundToBeDelivered}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================ -->
+          <!-- PAYMENT DETAILS -->
+          <!-- ============================================ -->
+          <tr>
+            <td style="padding:16px 48px 0 48px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:8px; color:#030712; line-height:1.55; padding-bottom:16px;">
+                    Due in days<br />
+                    <strong style="font-size:11px;">{{dueInDays}}</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:8px; color:#030712; line-height:1.55; padding-bottom:16px;">
+                    Mean of transfer<br />
+                    <strong style="font-size:11px;">{{meanOfTransfer}}</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:8px; color:#030712; line-height:1.55;">
+                    To be delivered to account<br />
+                    <strong style="font-size:11px;">{{deliveryAccount}}</strong>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================ -->
+          <!-- EMISSIONS TABLE -->
+          <!-- ============================================ -->
+          <tr>
+            <td style="padding:48px 40px 0 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+                <!-- Section header -->
+                <tr>
+                  <td colspan="2" style="font-family:'Poppins',Arial,sans-serif; font-size:13px; font-weight:700; color:#030712; padding:10px 8px; border-bottom:1px solid #030712;">
+                    &#8250;&nbsp; Emissions
+                  </td>
+                </tr>
+                <!-- Row: CO2 Total emissions -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    CO2 Total emissions in the period <span style="font-size:8px; color:#4a5565;">[MT]</span>
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    {{co2TotalEmissions}}
+                  </td>
+                </tr>
+                <!-- Row: MRV CO2 emissions -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    MRV CO2 emissions in period <span style="font-size:8px; color:#4a5565;">[MT]</span>
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    {{mrvCo2Emissions}}
+                  </td>
+                </tr>
+                <!-- Sub-row: Thereof to/from EU ports -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px 11px 24px; border-bottom:1px solid #d1d5dc;">
+                    &bull;&nbsp; Thereof to/from EU ports <span style="font-size:8px; color:#4a5565;">[MT]</span>
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    {{thereofToFromEu}}
+                  </td>
+                </tr>
+                <!-- Sub-row: Thereof between EU ports -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px 11px 24px; border-bottom:1px solid #d1d5dc;">
+                    &bull;&nbsp; Thereof between EU ports <span style="font-size:8px; color:#4a5565;">[MT]</span>
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #d1d5dc;">
+                    {{thereofBetweenEu}}
+                  </td>
+                </tr>
+                <!-- Sub-row: Thereof inside EU ports -->
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px 11px 24px; border-bottom:1px solid #030712;">
+                    &bull;&nbsp; Thereof inside EU ports <span style="font-size:8px; color:#4a5565;">[MT]</span>
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #030712;">
+                    {{thereofInsideEu}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================ -->
+          <!-- OFF-HIRE PERIODS TABLE -->
+          <!-- ============================================ -->
+          <tr>
+            <td style="padding:32px 40px 0 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+                <!-- Section header -->
+                <tr>
+                  <td colspan="2" style="font-family:'Poppins',Arial,sans-serif; font-size:13px; font-weight:700; color:#030712; padding:10px 8px; border-bottom:1px solid #030712;">
+                    &#8250;&nbsp; Off-Hire periods
+                  </td>
+                </tr>
+                <!-- Off-hire rows: repeat this block for each off-hire period -->
+                {{#each offHirePeriods}}
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #030712;">
+                    {{this.period}} <span style="font-size:8px; color:#4a5565;">[EUA]</span>
+                  </td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:11px 8px; border-bottom:1px solid #030712;">
+                    {{this.eua}}
+                  </td>
+                </tr>
+                {{/each}}
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================ -->
+          <!-- VOYAGE INFORMATION TABLE -->
+          <!-- ============================================ -->
+          <tr>
+            <td style="padding:32px 40px 0 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+                <!-- Section header -->
+                <tr>
+                  <td colspan="8" style="font-family:'Poppins',Arial,sans-serif; font-size:13px; font-weight:700; color:#030712; padding:10px 8px; border-bottom:none;">
+                    &#8250;&nbsp; Voyage information
+                  </td>
+                </tr>
+                <!-- Table column headers -->
+                <tr style="background-color:#f3f4f6;">
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#4a5565; padding:8px; border-bottom:1px solid #030712;">Voyage</td>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#4a5565; padding:8px; border-bottom:1px solid #030712;">Mode</td>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#4a5565; padding:8px; border-bottom:1px solid #030712;">Start time<br />(UTC)</td>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#4a5565; padding:8px; border-bottom:1px solid #030712;">End time<br />(UTC)</td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#4a5565; padding:8px; border-bottom:1px solid #030712;">Distance<br /><span style="font-size:8px;">(nm)</span></td>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#4a5565; padding:8px; border-bottom:1px solid #030712;">EU scope<br />FuelEU</td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#4a5565; padding:8px; border-bottom:1px solid #030712;">EU ETS scope</td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#4a5565; padding:8px; border-bottom:1px solid #030712;">EUA</td>
+                </tr>
+                <!-- Voyage rows: repeat this block for each voyage -->
+                {{#each voyages}}
+                <tr>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:16px 8px; border-bottom:1px solid {{#if @last}}#030712{{else}}#d1d5dc{{/if}};">{{this.voyage}}</td>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:16px 8px; border-bottom:1px solid {{#if @last}}#030712{{else}}#d1d5dc{{/if}};">{{this.mode}}</td>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:16px 8px; border-bottom:1px solid {{#if @last}}#030712{{else}}#d1d5dc{{/if}};">{{this.startTime}}</td>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:16px 8px; border-bottom:1px solid {{#if @last}}#030712{{else}}#d1d5dc{{/if}};">{{this.endTime}}</td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:16px 8px; border-bottom:1px solid {{#if @last}}#030712{{else}}#d1d5dc{{/if}};">{{this.distance}}</td>
+                  <td style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:16px 8px; border-bottom:1px solid {{#if @last}}#030712{{else}}#d1d5dc{{/if}};">{{this.euScopeFuelEu}}</td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:16px 8px; border-bottom:1px solid {{#if @last}}#030712{{else}}#d1d5dc{{/if}};">{{this.euEtsScope}}</td>
+                  <td align="right" style="font-family:'Poppins',Arial,sans-serif; font-size:11px; color:#030712; padding:16px 8px; border-bottom:1px solid {{#if @last}}#030712{{else}}#d1d5dc{{/if}};">{{this.eua}}</td>
+                </tr>
+                {{/each}}
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================ -->
+          <!-- FOOTER -->
+          <!-- ============================================ -->
+          <tr>
+            <td style="padding:48px 40px 32px 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td valign="bottom">
+                    <p style="font-family:'Poppins',Arial,sans-serif; font-size:8px; color:#697282; line-height:1.5; margin:0 0 24px 0;">
+                      *OceanScore takes no responsibility for calculated Compliance Balance, since Compl. Balance calculation depends entirely on quality of ship reporting. Requested Compliance Balance numbers are rounded up to the next full number.
+                    </p>
+                    <p style="font-family:'Poppins',Arial,sans-serif; font-size:8px; color:#697282; line-height:1.5; margin:0 0 4px 0;">
+                      Provided by
+                    </p>
+                    <!-- OceanScore logo: replace src with system logo URL -->
+                    <img src="{{oceanScoreLogoUrl}}" alt="OceanScore" height="15" style="display:block; border:0;" />
+                  </td>
+                  <td width="60" align="right" valign="bottom" style="font-family:'Poppins',Arial,sans-serif; font-size:8px; color:#98a1ae;">
+                    &copy; 2025 Oceanscore
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
