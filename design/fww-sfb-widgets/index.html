@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FWW Widgets in the SFB Fund Detail · preview</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+  body { margin:0; font-family: Inter, Arial, sans-serif; background:#EEF1F6; color:#1C2130; display:grid; grid-template-columns: 260px 1fr; min-height:100vh; }
+  nav { background:#fff; border-right:1px solid #E5E9F0; padding:20px 16px; position:sticky; top:0; height:100vh; box-sizing:border-box; overflow:auto; }
+  nav h1 { font-size:14px; margin:0 0 4px; } nav p { font-size:12px; color:#6B7280; margin:0 0 16px; line-height:1.5; }
+  nav a { display:block; padding:8px 10px; border-radius:8px; font-size:13px; color:#1C2130; text-decoration:none; } nav a:hover { background:#F6F8FB; } nav a.on { background:#E8F0FE; color:#2A6DF4; font-weight:600; }
+  main { padding:24px 32px 64px; display:flex; flex-direction:column; gap:40px; min-width:0; }
+  section h2 { font-size:15px; margin:0 0 4px; } section .sub { font-size:12px; color:#6B7280; margin:0 0 12px; }
+  .frame { background:#fff; border:1px solid #E5E9F0; border-radius:12px; overflow:hidden; box-shadow:0 1px 2px rgba(28,33,48,.06); }
+  .frame iframe { border:0; display:block; transform-origin: 0 0; }
+  .note { background:#FFF8DC; border:1px solid #F3E4A4; border-radius:8px; padding:10px 14px; font-size:12px; line-height:1.5; margin:0 0 12px; white-space:pre-line; }
+</style></head><body>
+<nav><h1>FWW Widgets in the SFB Fund Detail</h1><p>FC-1012 · design preview. Each artboard is rendered live from its <code>.dc.html</code> file and scaled to fit.</p>
+<a href="#Main">SFB fund detail · Sektoren/Regionen with Allokationsdaten</a><a href="#WidgetPattern">Reusable widget pattern + Download</a><a href="#EmptyState">Empty states without FWW data</a><a href="#Rendite">Rendite · Renditeentwicklung (loaded)</a><a href="#RenditeStates">Rendite · trigger states A/B/C</a><a href="#CrashDrawdowns">Crash Drawdowns</a><a href="#Dokumente">Dokumente · new tab</a><a href="#Popup">Pop-up · enlarged widget</a>
+</nav>
+<main>
+<div class="note">FC-1012 · FWW integration in SFB
+Widgets: Allokationsdaten, Renditeentwicklung, Crash Drawdowns, Dokumente tab.
+Based on the client deck “FWW Integration SFB V1” and the current SFB screens. Tab strip and panel frame will later adopt the Private Markets design (FC-1004) 1:1 – the widgets are independent of it. All figures are sample data. Product terms (tab names, widget titles, Datenstand, document names) are kept in German as the client uses them; final UI copy will be German.</div>
+<section id="Main"><h2>SFB fund detail · Sektoren/Regionen with Allokationsdaten</h2><p class="sub">Main.dc.html · 1440 × 1300</p><div class="frame" data-w="1440" data-h="1300"><iframe src="Main.dc.html" width="1440" height="1300" loading="lazy" title="SFB fund detail · Sektoren/Regionen with Allokationsdaten"></iframe></div></section><section id="WidgetPattern"><h2>Reusable widget pattern + Download</h2><p class="sub">WidgetPattern.dc.html · 1296 × 740</p><div class="frame" data-w="1296" data-h="740"><iframe src="WidgetPattern.dc.html" width="1296" height="740" loading="lazy" title="Reusable widget pattern + Download"></iframe></div></section><section id="EmptyState"><h2>Empty states without FWW data</h2><p class="sub">EmptyState.dc.html · 1296 × 1180</p><div class="frame" data-w="1296" data-h="1180"><iframe src="EmptyState.dc.html" width="1296" height="1180" loading="lazy" title="Empty states without FWW data"></iframe></div></section><section id="Rendite"><h2>Rendite · Renditeentwicklung (loaded)</h2><p class="sub">Rendite.dc.html · 1296 × 820</p><div class="frame" data-w="1296" data-h="820"><iframe src="Rendite.dc.html" width="1296" height="820" loading="lazy" title="Rendite · Renditeentwicklung (loaded)"></iframe></div></section><section id="RenditeStates"><h2>Rendite · trigger states A/B/C</h2><p class="sub">RenditeStates.dc.html · 1296 × 1840</p><div class="frame" data-w="1296" data-h="1840"><iframe src="RenditeStates.dc.html" width="1296" height="1840" loading="lazy" title="Rendite · trigger states A/B/C"></iframe></div></section><section id="CrashDrawdowns"><h2>Crash Drawdowns</h2><p class="sub">CrashDrawdowns.dc.html · 1296 × 760</p><div class="frame" data-w="1296" data-h="760"><iframe src="CrashDrawdowns.dc.html" width="1296" height="760" loading="lazy" title="Crash Drawdowns"></iframe></div></section><section id="Dokumente"><h2>Dokumente · new tab</h2><p class="sub">Dokumente.dc.html · 1296 × 830</p><div class="frame" data-w="1296" data-h="830"><iframe src="Dokumente.dc.html" width="1296" height="830" loading="lazy" title="Dokumente · new tab"></iframe></div></section><section id="Popup"><h2>Pop-up · enlarged widget</h2><p class="sub">Popup.dc.html · 1440 × 900</p><div class="frame" data-w="1440" data-h="900"><iframe src="Popup.dc.html" width="1440" height="900" loading="lazy" title="Pop-up · enlarged widget"></iframe></div></section>
+</main>
+<script>
+  function fit() { document.querySelectorAll('.frame').forEach(f => { const w = +f.dataset.w, h = +f.dataset.h, avail = f.parentElement.clientWidth; const k = Math.min(1, avail / w); f.style.width = Math.round(w * k) + 'px'; f.style.height = Math.round(h * k) + 'px'; f.firstElementChild.style.transform = 'scale(' + k + ')'; }); }
+  window.addEventListener('resize', fit); fit();
+  const links = [...document.querySelectorAll('nav a')]; const secs = [...document.querySelectorAll('main section')];
+  new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-40% 0px -55% 0px' }).observe && secs.forEach(s => new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-40% 0px -55% 0px' }).observe(s));
+</script>
+</body></html>

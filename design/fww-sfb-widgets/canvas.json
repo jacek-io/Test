@@ -2,7 +2,7 @@
   "artboards": [
     {
       "file": "Main.dc.html",
-      "title": "SFB Fund Detail · Sektoren/Regionen mit Allokationsdaten",
+      "title": "SFB fund detail · Sektoren/Regionen with Allokationsdaten",
       "x": 0,
       "y": 0,
       "w": 1440,
@@ -10,7 +10,7 @@
     },
     {
       "file": "WidgetPattern.dc.html",
-      "title": "Wiederverwendbares Widget-Muster + Download",
+      "title": "Reusable widget pattern + Download",
       "x": 1560,
       "y": 0,
       "w": 1296,
@@ -18,7 +18,7 @@
     },
     {
       "file": "EmptyState.dc.html",
-      "title": "Leerzustände ohne FWW-Daten",
+      "title": "Empty states without FWW data",
       "x": 1560,
       "y": 880,
       "w": 1296,
@@ -26,7 +26,7 @@
     },
     {
       "file": "Rendite.dc.html",
-      "title": "Rendite · Renditeentwicklung (geladen)",
+      "title": "Rendite · Renditeentwicklung (loaded)",
       "x": 0,
       "y": 1440,
       "w": 1296,
@@ -34,7 +34,7 @@
     },
     {
       "file": "RenditeStates.dc.html",
-      "title": "Rendite · Trigger-Zustände A/B/C",
+      "title": "Rendite · trigger states A/B/C",
       "x": 0,
       "y": 2320,
       "w": 1296,
@@ -50,15 +50,15 @@
     },
     {
       "file": "Dokumente.dc.html",
-      "title": "Dokumente · neuer Tab",
+      "title": "Dokumente · new tab",
       "x": 1560,
       "y": 3040,
       "w": 1296,
-      "h": 810
+      "h": 830
     },
     {
       "file": "Popup.dc.html",
-      "title": "Pop-up · vergrößertes Widget",
+      "title": "Pop-up · enlarged widget",
       "x": 1560,
       "y": 3990,
       "w": 1440,
@@ -71,35 +71,35 @@
       "x": 0,
       "y": -260,
       "w": 520,
-      "text": "FC-1012 · FWW-Integration SFB\nWidgets: Allokationsdaten, Renditeentwicklung, Crash Drawdowns, Dokumente-Tab.\nGestaltet auf Basis des Client-Decks „FWW Integration SFB V1“ und der aktuellen SFB-Screens. Tab-Leiste und Panel-Rahmen übernehmen später 1:1 das Private-Markets-Design (FC-1004) – die Widgets sind davon unabhängig. Alle Zahlen sind Beispieldaten."
+      "text": "FC-1012 · FWW integration in SFB\nWidgets: Allokationsdaten, Renditeentwicklung, Crash Drawdowns, Dokumente tab.\nBased on the client deck “FWW Integration SFB V1” and the current SFB screens. Tab strip and panel frame will later adopt the Private Markets design (FC-1004) 1:1 – the widgets are independent of it. All figures are sample data. Product terms (tab names, widget titles, Datenstand, document names) are kept in German as the client uses them; final UI copy will be German."
     },
     {
       "id": "pie-rule",
       "x": 560,
       "y": -260,
       "w": 420,
-      "text": "Allokationsdaten: maximal 7 Segmente + „Sonstige (n)“, damit das Kreisdiagramm lesbar bleibt. Für „Einzeltitel“ (Top 10) empfehlen wir dieselbe Legendenliste mit Balken statt Kreis – Werte liegen zu nah beieinander."
+      "text": "Allokationsdaten: at most 7 segments + “Other (n)” so the pie stays readable. For “Einzeltitel” (top 10 holdings) we recommend the same legend list with bars instead of a pie – the values sit too close together."
     },
     {
       "id": "trigger",
       "x": 0,
       "y": 4200,
       "w": 620,
-      "text": "Trigger-Control (Rendite): Kein Auto-Load beim Öffnen des Tabs. Zustände: A Pre-fetch → B Laden → geladen. Jede Änderung von Zeitraum oder Vergleich setzt den Button wieder auf „Rendite laden“ und dimmt den alten Chart (C). Ein Abruf = ein cachebarer Key aus ISIN + Zeitraum + Reihen."
+      "text": "Trigger control (Rendite): no auto-load on tab open. States: A pre-fetch → B loading → loaded. Any change of period or comparison resets the button to “Load returns” and dims the old chart (C). One request = one cacheable key of ISIN + period + series."
     },
     {
       "id": "docs",
       "x": 1560,
       "y": 3880,
       "w": 640,
-      "text": "Vorschlag Fonds- vs. ISIN-Ebene: Ein Anteilsklassen-Selector oben im Tab, vorbelegt mit der ISIN aus der Fondsliste. Jede Zeile trägt ein Ebene-Tag. Fondsebene (Jahres-/Halbjahresbericht, Verkaufsprospekt, Fondsportrait) gilt für alle Klassen und wechselt nicht mit. Anteilsklassen-Ebene (PRIIPS-KID) wechselt mit der ISIN; „weitere Anteilsklassen“ klappt die übrigen KIDs inline auf."
+      "text": "Proposal fund level vs. ISIN level: one share-class selector at the top of the tab, preset to the ISIN from the fund list. Every row carries a level tag. Fund level (annual/semi-annual report, prospectus, Fondsportrait) applies to all classes and does not change with the selector. Share-class level (PRIIPS-KID) follows the ISIN; “other share classes” expands the remaining KIDs inline. This keeps the Anteilsklassen tab untouched."
     },
     {
       "id": "pattern",
       "x": 2900,
       "y": 0,
       "w": 380,
-      "text": "Ein Muster für alle FWW-Widgets: Kopfzeile (Titel · Datenstand+Quelle · Vergrößern · Download) → Steuerzeile → Inhalt. Download-Menü in zwei Gruppen: Grafik (JPEG, PPTX) und Daten (XLSX, CSV)."
+      "text": "One pattern for every FWW widget: header (title · Datenstand + source · enlarge · download) → control row → content. Download menu in two groups: chart (JPEG, PPTX) and data (XLSX, CSV)."
     }
   ],
   "launch": {
