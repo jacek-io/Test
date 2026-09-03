@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+  body { margin:0; font-family: Inter, "Helvetica Neue", Arial, sans-serif; color:#1C2130; -webkit-font-smoothing:antialiased; font-size:13px; line-height:1.45; }
+  a { color:#2A6DF4; text-decoration:none; } a:hover { color:#1F5FE0; }
+  .num { font-variant-numeric: tabular-nums; }
+  .card { background:#FFFFFF; border:1px solid #E5E9F0; border-radius:12px; }
+  .wgt { background:#FFFFFF; border:1px solid #E5E9F0; border-radius:12px; padding:20px 24px 22px; display:flex; flex-direction:column; gap:16px; }
+  .wgt-head { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .wgt-title { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:600; color:#1C2130; }
+  .wgt-meta { display:flex; align-items:center; gap:8px; }
+  .stand { font-size:12px; color:#6B7280; display:flex; align-items:center; gap:6px; padding:0 10px; height:28px; border-radius:999px; background:#F6F8FB; white-space:nowrap; }
+  .ibtn { width:32px; height:32px; border-radius:8px; border:1px solid #E5E9F0; background:#FFFFFF; display:flex; align-items:center; justify-content:center; color:#3F4756; }
+  .ibtn.off { color:#9AA3B2; background:#F6F8FB; }
+  .pill { display:inline-flex; align-items:center; justify-content:center; height:30px; padding:0 14px; border-radius:999px; font-size:12px; font-weight:500; white-space:nowrap; }
+  .pill.g-strong { background:#4CAF50; color:#fff; }
+  .pill.g-soft { background:#E6F5E8; color:#2E7D32; }
+  .pill.gray { background:#F1F3F6; color:#3F4756; }
+  .pill.r-soft { background:#FDE7E7; color:#D64545; }
+  .seg { display:inline-flex; background:#F6F8FB; border-radius:999px; padding:3px; gap:2px; }
+  .seg > div { height:30px; padding:0 14px; border-radius:999px; display:flex; align-items:center; font-size:12px; font-weight:500; color:#3F4756; white-space:nowrap; }
+  .seg > div.on { background:#FFFFFF; color:#1C2130; font-weight:600; box-shadow:0 1px 2px rgba(28,33,48,.10); }
+  .chip { display:inline-flex; align-items:center; gap:8px; height:32px; padding:0 12px 0 10px; border-radius:999px; border:1px solid #D7DEE8; font-size:12px; font-weight:500; color:#1C2130; background:#FFFFFF; white-space:nowrap; }
+  .chip.on { border-color:#2A6DF4; background:#E8F0FE; }
+  .chip.dis { color:#9AA3B2; border-style:dashed; background:#F6F8FB; }
+  .cb { width:16px; height:16px; border-radius:4px; border:1.5px solid #D7DEE8; background:#FFFFFF; display:flex; align-items:center; justify-content:center; }
+  .cb.on { background:#2A6DF4; border-color:#2A6DF4; }
+  .dot { width:10px; height:10px; border-radius:999px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; height:36px; padding:0 18px; border-radius:999px; font-size:13px; font-weight:600; white-space:nowrap; }
+  .btn.pri { background:#2A6DF4; color:#fff; }
+  .btn.sec { background:#FFFFFF; color:#1C2130; border:1px solid #D7DEE8; }
+  .btn.ghost { background:transparent; color:#2A6DF4; }
+  .tabs { display:flex; gap:28px; border-bottom:1px solid #E5E9F0; }
+  .tabs > div { padding:10px 0 12px; font-size:12px; font-weight:500; color:#6B7280; display:flex; align-items:center; gap:6px; white-space:nowrap; }
+  .tabs > div.on { color:#2A6DF4; font-weight:600; box-shadow:inset 0 -2px 0 #2A6DF4; }
+  .neu { font-size:10px; font-weight:600; color:#2A6DF4; background:#E8F0FE; border-radius:4px; padding:1px 5px; letter-spacing:.02em; }
+  .lbl { font-size:11px; font-weight:500; color:#6B7280; text-transform:uppercase; letter-spacing:.04em; }
+  .kv { display:grid; grid-template-columns: 1fr auto; gap:0 16px; padding:10px 0; border-bottom:1px solid #E5E9F0; align-items:center; font-size:13px; }
+  .kv:last-child { border-bottom:0; }
+  .muted { color:#6B7280; }
+  .small { font-size:12px; }
+  .callout { display:inline-flex; width:22px; height:22px; border-radius:999px; background:#1C2130; color:#fff; font-size:11px; font-weight:700; align-items:center; justify-content:center; }
+  .skel { background:linear-gradient(90deg, #F6F8FB 0%, #EEF1F6 50%, #F6F8FB 100%); border-radius:6px; }
+  .th { font-size:11px; font-weight:600; color:#6B7280; text-transform:uppercase; letter-spacing:.04em; padding:0 12px 10px; }
+</style>
+</helmet>
+
+  <div style="width:1296px; padding:24px; background:#F6F8FB; box-sizing:border-box; display:flex; flex-direction:column; gap:24px">
+    <div style="display:flex; flex-direction:column; gap:4px"><div style="font-size:18px; font-weight:600">Leerzustände – Fonds ohne FWW-Daten</div><div class="muted">Das Widget bleibt an seinem Platz, damit sich das Layout des Tabs nicht verschiebt. Vergrößern und Download sind deaktiviert, der Datenstand zeigt „–“. Der Text nennt, was stattdessen verfügbar ist.</div></div>
+    <div style="display:flex; gap:20px">
+      
+    <div class="wgt" style="flex:1">
+      
+  <div class="wgt-head">
+    <div class="wgt-title"><span>Allokationsdaten</span><span style="color:#9AA3B2; display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span></div>
+    <div class="wgt-meta">
+      <div class="stand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span>Datenstand –</span><span style="color:#D7DEE8">·</span><span>Quelle: FWW</span></div>
+      <div class="ibtn off" title="Vergrößern"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      <div class="ibtn off" title="Download"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg></div>
+    </div>
+  </div>
+      <div style="min-height:260px; border-radius:10px; background:#F6F8FB; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center; padding:24px">
+        <div style="color:#9AA3B2"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/><path d="M4 4l16 16"/></svg></div>
+        <div style="font-size:14px; font-weight:600">Keine FWW-Allokationsdaten für diesen Fonds</div>
+        <div class="small muted" style="max-width:420px; line-height:1.5">FWW liefert für diesen Fonds derzeit keine Aufschlüsselung nach Sektoren, Ländern oder Währungen. Die Über-/Untergewichtung links basiert auf FondsConsult-Daten und bleibt verfügbar.</div>
+      </div>
+    </div>
+      
+    <div class="wgt" style="flex:1">
+      
+  <div class="wgt-head">
+    <div class="wgt-title"><span>Crash Drawdowns</span><span style="color:#9AA3B2; display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span></div>
+    <div class="wgt-meta">
+      <div class="stand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span>Datenstand –</span><span style="color:#D7DEE8">·</span><span>Quelle: FWW</span></div>
+      <div class="ibtn off" title="Vergrößern"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      <div class="ibtn off" title="Download"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg></div>
+    </div>
+  </div>
+      <div style="min-height:260px; border-radius:10px; background:#F6F8FB; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center; padding:24px">
+        <div style="color:#9AA3B2"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/><path d="M4 4l16 16"/></svg></div>
+        <div style="font-size:14px; font-weight:600">Keine FWW-Kurshistorie für Krisenzeiträume</div>
+        <div class="small muted" style="max-width:420px; line-height:1.5">Der Fonds wurde nach dem letzten der sechs Ereignisse aufgelegt (Auflagedatum 14.03.2023). Krisenkennzahlen werden angezeigt, sobald ein Ereignis im Track Record liegt.</div>
+      </div>
+    </div>
+    </div>
+    <div class="wgt">
+      
+  <div class="wgt-head">
+    <div class="wgt-title"><span>Renditeentwicklung</span><span style="color:#9AA3B2; display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span></div>
+    <div class="wgt-meta">
+      <div class="stand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span>Datenstand 31.07.2025</span><span style="color:#D7DEE8">·</span><span>Quelle: FWW</span></div>
+      <div class="ibtn" title="Vergrößern"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      <div class="ibtn" title="Download"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg></div>
+    </div>
+  </div>
+      
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px 16px; flex-wrap:wrap">
+    <div style="display:flex; align-items:center; gap:10px"><span class="small muted">Zeitraum</span><div class="seg"><div class="">1 Monat</div><div class="">6 Monate</div><div class="">1 Jahr</div><div class="on">3 Jahre</div><div class="">5 Jahre</div><div class="">10 Jahre</div><div class="">Individuell</div></div></div>
+    <div style="margin-left:auto; display:flex"><div class="btn pri"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>Rendite laden</div></div>
+  </div>
+  
+  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap">
+    <span class="small muted" style="margin-right:2px">Vergleich mit</span>
+    <div class="chip on"><span class="cb on" style="color:#fff"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span class="dot" style="background:#EB6834"></span>FondsConsult Peergroup</div>
+    <div class="chip on"><span class="cb on" style="color:#fff"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span class="dot" style="background:#1BAF7A"></span>Benchmark (ETF)</div>
+    <div class="chip dis" title="Kein FWW-Sektor zugeordnet"><span class="cb" style="border-style:dashed"></span><span class="dot" style="background:#D7DEE8"></span>FWW Sektordurchschnitt<span style="display:flex; color:#9AA3B2"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span></div>
+  </div>
+      <div style="display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:8px; background:#EAF3FD; color:#3F4756; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span><strong>FWW Sektordurchschnitt nicht verfügbar:</strong> FWW ordnet diesem Fonds keinen Sektor zu. Peergroup und Benchmark können weiterhin geladen werden.</span></div>
+      <div style="height:200px; border:1px dashed #D7DEE8; border-radius:10px; background:#F6F8FB; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center">
+        <div style="font-size:14px; font-weight:600">Zeitraum und Vergleich wählen, dann Rendite laden</div>
+        <div class="btn pri"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>Rendite laden</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px">
+      <div style="display:flex; align-items:baseline; gap:12px"><span class="lbl" style="color:#2A6DF4">Dokumente · Fonds ohne Sponsoring</span><span class="small muted">Die Research-Sektion bleibt sichtbar und erklärt sich, statt zu verschwinden.</span></div>
+      <div class="wgt" style="gap:0; padding:20px 12px 4px">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:0 12px 14px"><div class="wgt-title"><span>Research von FondsConsult</span></div><div class="small muted">Nur für Fonds mit FondsConsult-Sponsoring</div></div>
+        <div style="display:flex; align-items:center; gap:12px; padding:18px 12px; border-top:1px solid #E5E9F0; color:#6B7280"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Für diesen Fonds liegt kein FondsConsult-Fondsportrait vor. Die Einschätzung finden Sie im Tab <a href="#">Einschätzung</a>.</span></div>
+      </div>
+    </div>
+  </div>
+</x-dc>
+</body>
+</html>

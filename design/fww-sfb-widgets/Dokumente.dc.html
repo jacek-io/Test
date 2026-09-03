@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+  body { margin:0; font-family: Inter, "Helvetica Neue", Arial, sans-serif; color:#1C2130; -webkit-font-smoothing:antialiased; font-size:13px; line-height:1.45; }
+  a { color:#2A6DF4; text-decoration:none; } a:hover { color:#1F5FE0; }
+  .num { font-variant-numeric: tabular-nums; }
+  .card { background:#FFFFFF; border:1px solid #E5E9F0; border-radius:12px; }
+  .wgt { background:#FFFFFF; border:1px solid #E5E9F0; border-radius:12px; padding:20px 24px 22px; display:flex; flex-direction:column; gap:16px; }
+  .wgt-head { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .wgt-title { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:600; color:#1C2130; }
+  .wgt-meta { display:flex; align-items:center; gap:8px; }
+  .stand { font-size:12px; color:#6B7280; display:flex; align-items:center; gap:6px; padding:0 10px; height:28px; border-radius:999px; background:#F6F8FB; white-space:nowrap; }
+  .ibtn { width:32px; height:32px; border-radius:8px; border:1px solid #E5E9F0; background:#FFFFFF; display:flex; align-items:center; justify-content:center; color:#3F4756; }
+  .ibtn.off { color:#9AA3B2; background:#F6F8FB; }
+  .pill { display:inline-flex; align-items:center; justify-content:center; height:30px; padding:0 14px; border-radius:999px; font-size:12px; font-weight:500; white-space:nowrap; }
+  .pill.g-strong { background:#4CAF50; color:#fff; }
+  .pill.g-soft { background:#E6F5E8; color:#2E7D32; }
+  .pill.gray { background:#F1F3F6; color:#3F4756; }
+  .pill.r-soft { background:#FDE7E7; color:#D64545; }
+  .seg { display:inline-flex; background:#F6F8FB; border-radius:999px; padding:3px; gap:2px; }
+  .seg > div { height:30px; padding:0 14px; border-radius:999px; display:flex; align-items:center; font-size:12px; font-weight:500; color:#3F4756; white-space:nowrap; }
+  .seg > div.on { background:#FFFFFF; color:#1C2130; font-weight:600; box-shadow:0 1px 2px rgba(28,33,48,.10); }
+  .chip { display:inline-flex; align-items:center; gap:8px; height:32px; padding:0 12px 0 10px; border-radius:999px; border:1px solid #D7DEE8; font-size:12px; font-weight:500; color:#1C2130; background:#FFFFFF; white-space:nowrap; }
+  .chip.on { border-color:#2A6DF4; background:#E8F0FE; }
+  .chip.dis { color:#9AA3B2; border-style:dashed; background:#F6F8FB; }
+  .cb { width:16px; height:16px; border-radius:4px; border:1.5px solid #D7DEE8; background:#FFFFFF; display:flex; align-items:center; justify-content:center; }
+  .cb.on { background:#2A6DF4; border-color:#2A6DF4; }
+  .dot { width:10px; height:10px; border-radius:999px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; height:36px; padding:0 18px; border-radius:999px; font-size:13px; font-weight:600; white-space:nowrap; }
+  .btn.pri { background:#2A6DF4; color:#fff; }
+  .btn.sec { background:#FFFFFF; color:#1C2130; border:1px solid #D7DEE8; }
+  .btn.ghost { background:transparent; color:#2A6DF4; }
+  .tabs { display:flex; gap:28px; border-bottom:1px solid #E5E9F0; }
+  .tabs > div { padding:10px 0 12px; font-size:12px; font-weight:500; color:#6B7280; display:flex; align-items:center; gap:6px; white-space:nowrap; }
+  .tabs > div.on { color:#2A6DF4; font-weight:600; box-shadow:inset 0 -2px 0 #2A6DF4; }
+  .neu { font-size:10px; font-weight:600; color:#2A6DF4; background:#E8F0FE; border-radius:4px; padding:1px 5px; letter-spacing:.02em; }
+  .lbl { font-size:11px; font-weight:500; color:#6B7280; text-transform:uppercase; letter-spacing:.04em; }
+  .kv { display:grid; grid-template-columns: 1fr auto; gap:0 16px; padding:10px 0; border-bottom:1px solid #E5E9F0; align-items:center; font-size:13px; }
+  .kv:last-child { border-bottom:0; }
+  .muted { color:#6B7280; }
+  .small { font-size:12px; }
+  .callout { display:inline-flex; width:22px; height:22px; border-radius:999px; background:#1C2130; color:#fff; font-size:11px; font-weight:700; align-items:center; justify-content:center; }
+  .skel { background:linear-gradient(90deg, #F6F8FB 0%, #EEF1F6 50%, #F6F8FB 100%); border-radius:6px; }
+  .th { font-size:11px; font-weight:600; color:#6B7280; text-transform:uppercase; letter-spacing:.04em; padding:0 12px 10px; }
+</style>
+</helmet>
+
+  <div style="width:1296px; background:#fff; padding:0 0 24px; box-sizing:border-box; border:1px solid #E5E9F0; border-radius:12px; overflow:hidden">
+    <div class="tabs" style="padding:0 20px">
+      <div class="">Stammdaten</div><div class="">Sektoren/Regionen</div><div class="">Portfoliocharakteristika</div><div class="">Rendite</div><div class="">Risiko</div><div class="">Aktives Management</div><div class="">Crash Drawdowns</div><div class="">ESG</div><div class="">Anteilsklassen</div><div class="">Peergroup</div>
+      <div class="on">Dokumente <span class="neu">NEU</span></div>
+    </div>
+    <div style="padding:20px 20px 0">
+  <div style="display:flex; flex-direction:column; gap:20px">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px">
+      <div style="max-width:720px; color:#3F4756">Alle Unterlagen zu diesem Fonds an einem Ort: Research von FondsConsult und die gesetzlichen Dokumente des Asset Managers. Dokumente auf <strong>Fondsebene</strong> gelten für alle Anteilsklassen, Dokumente auf <strong>Anteilsklassen-Ebene</strong> beziehen sich auf die gewählte ISIN.</div>
+      <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-end">
+        <span class="lbl">Anteilsklasse</span>
+        <div style="display:flex; align-items:center; gap:10px; height:36px; padding:0 8px 0 14px; border:1px solid #D7DEE8; border-radius:8px; background:#fff; font-size:13px"><span class="num" style="font-weight:600">LU0289214628</span><span class="muted">A0MNZ2 · EUR · A (acc)</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+        <span class="small muted">5 Anteilsklassen · Sie sehen die ISIN aus Ihrer Fondsliste</span>
+      </div>
+    </div>
+
+    <div class="wgt" style="gap:0; padding:20px 12px 4px">
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:0 12px 14px">
+        <div class="wgt-title"><span>Research von FondsConsult</span><span class="pill" style="height:22px; padding:0 8px; font-size:11px; background:#EAF3FD; color:#2A6DF4">Sponsored Fund</span></div>
+        <div class="small muted">Nur für Fonds mit FondsConsult-Sponsoring</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 40px 1fr 240px 120px 80px 180px; gap:12px; padding:0 12px 8px"><div></div><div class="th" style="padding:0">Dokument</div><div class="th" style="padding:0">Ebene</div><div class="th" style="padding:0">Stand</div><div class="th" style="padding:0">Sprache</div><div></div></div>
+      
+    <div style="display:grid; grid-template-columns: 40px 1fr 240px 120px 80px 180px; gap:12px; align-items:center; padding:14px 12px; border-top:1px solid #E5E9F0">
+      <div style="display:flex"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" stroke="#D64545" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="#D64545" stroke-width="1.75" stroke-linejoin="round"/><text x="12" y="17.5" text-anchor="middle" font-family="Inter, Arial" font-size="6.5" font-weight="700" fill="#D64545">PDF</text></svg></div>
+      <div style="min-width:0"><div style="font-size:13px; font-weight:600">Fondsportrait JPMorgan Funds – Europe Equity Plus Fund</div><div class="small muted">Einschätzung, Investmentansatz und Management-Profil auf 4 Seiten · 2,4 MB</div></div>
+      <div><span style="display:inline-flex; align-items:center; gap:6px; height:24px; padding:0 10px; border-radius:999px; background:#F1F3F6; color:#3F4756; font-size:11px; font-weight:600"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Fondsebene</span></div>
+      <div class="num" style="font-size:13px">07/2025</div>
+      <div style="font-size:13px">DE</div>
+      <div style="display:flex; justify-content:flex-end; gap:8px"><div class="btn sec" style="height:32px; padding:0 12px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Ansehen</div><div class="btn pri" style="height:32px; padding:0 12px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>PDF</div></div>
+    </div>
+    </div>
+
+    <div class="wgt" style="gap:0; padding:20px 12px 4px">
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:0 12px 14px">
+        <div class="wgt-title"><span>Allgemeine Dokumente des Asset Managers</span><span style="color:#9AA3B2; display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span></div>
+        <div class="stand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span>Abgerufen 31.07.2025</span><span style="color:#D7DEE8">·</span><span>Quelle: FWW</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 40px 1fr 240px 120px 80px 180px; gap:12px; padding:0 12px 8px"><div></div><div class="th" style="padding:0">Dokument</div><div class="th" style="padding:0">Ebene</div><div class="th" style="padding:0">Stand</div><div class="th" style="padding:0">Sprache</div><div></div></div>
+      
+    <div style="display:grid; grid-template-columns: 40px 1fr 240px 120px 80px 180px; gap:12px; align-items:center; padding:14px 12px; border-top:1px solid #E5E9F0">
+      <div style="display:flex"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" stroke="#D64545" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="#D64545" stroke-width="1.75" stroke-linejoin="round"/><text x="12" y="17.5" text-anchor="middle" font-family="Inter, Arial" font-size="6.5" font-weight="700" fill="#D64545">PDF</text></svg></div>
+      <div style="min-width:0"><div style="font-size:13px; font-weight:600">PRIIPS-KID</div><div class="small muted">Basisinformationsblatt · 3 Seiten · 180 KB</div><div style="margin-top:6px"><a href="#" style="font-size:12px; font-weight:500; display:inline-flex; align-items:center; gap:4px">Für 4 weitere Anteilsklassen anzeigen <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a></div></div>
+      <div><span style="display:inline-flex; align-items:center; gap:6px; height:24px; padding:0 10px; border-radius:999px; background:#E8F0FE; color:#2A6DF4; font-size:11px; font-weight:600"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Anteilsklasse · LU0289214628</span></div>
+      <div class="num" style="font-size:13px">15.02.2025</div>
+      <div style="font-size:13px">DE</div>
+      <div style="display:flex; justify-content:flex-end; gap:8px"><div class="btn sec" style="height:32px; padding:0 12px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Ansehen</div><div class="btn pri" style="height:32px; padding:0 12px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>PDF</div></div>
+    </div>
+      
+    <div style="display:grid; grid-template-columns: 40px 1fr 240px 120px 80px 180px; gap:12px; align-items:center; padding:14px 12px; border-top:1px solid #E5E9F0">
+      <div style="display:flex"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" stroke="#D64545" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="#D64545" stroke-width="1.75" stroke-linejoin="round"/><text x="12" y="17.5" text-anchor="middle" font-family="Inter, Arial" font-size="6.5" font-weight="700" fill="#D64545">PDF</text></svg></div>
+      <div style="min-width:0"><div style="font-size:13px; font-weight:600">Jahresbericht</div><div class="small muted">Geprüfter Jahresbericht des Umbrellas · 312 Seiten · 6,8 MB</div></div>
+      <div><span style="display:inline-flex; align-items:center; gap:6px; height:24px; padding:0 10px; border-radius:999px; background:#F1F3F6; color:#3F4756; font-size:11px; font-weight:600"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Fondsebene</span></div>
+      <div class="num" style="font-size:13px">31.12.2024</div>
+      <div style="font-size:13px">DE / EN</div>
+      <div style="display:flex; justify-content:flex-end; gap:8px"><div class="btn sec" style="height:32px; padding:0 12px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Ansehen</div><div class="btn pri" style="height:32px; padding:0 12px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>PDF</div></div>
+    </div>
+      
+    <div style="display:grid; grid-template-columns: 40px 1fr 240px 120px 80px 180px; gap:12px; align-items:center; padding:14px 12px; border-top:1px solid #E5E9F0">
+      <div style="display:flex"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" stroke="#D64545" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="#D64545" stroke-width="1.75" stroke-linejoin="round"/><text x="12" y="17.5" text-anchor="middle" font-family="Inter, Arial" font-size="6.5" font-weight="700" fill="#D64545">PDF</text></svg></div>
+      <div style="min-width:0"><div style="font-size:13px; font-weight:600">Halbjahresbericht</div><div class="small muted">Ungeprüfter Halbjahresbericht · 188 Seiten · 4,1 MB</div></div>
+      <div><span style="display:inline-flex; align-items:center; gap:6px; height:24px; padding:0 10px; border-radius:999px; background:#F1F3F6; color:#3F4756; font-size:11px; font-weight:600"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Fondsebene</span></div>
+      <div class="num" style="font-size:13px">30.06.2025</div>
+      <div style="font-size:13px">DE / EN</div>
+      <div style="display:flex; justify-content:flex-end; gap:8px"><div class="btn sec" style="height:32px; padding:0 12px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Ansehen</div><div class="btn pri" style="height:32px; padding:0 12px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>PDF</div></div>
+    </div>
+      
+    <div style="display:grid; grid-template-columns: 40px 1fr 240px 120px 80px 180px; gap:12px; align-items:center; padding:14px 12px; border-top:1px solid #E5E9F0">
+      <div style="display:flex"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" stroke="#D64545" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="#D64545" stroke-width="1.75" stroke-linejoin="round"/><text x="12" y="17.5" text-anchor="middle" font-family="Inter, Arial" font-size="6.5" font-weight="700" fill="#D64545">PDF</text></svg></div>
+      <div style="min-width:0"><div style="font-size:13px; font-weight:600">Verkaufsprospekt</div><div class="small muted">Inkl. Besonderer Teil des Teilfonds · 402 Seiten · 5,2 MB</div></div>
+      <div><span style="display:inline-flex; align-items:center; gap:6px; height:24px; padding:0 10px; border-radius:999px; background:#F1F3F6; color:#3F4756; font-size:11px; font-weight:600"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Fondsebene</span></div>
+      <div class="num" style="font-size:13px">03/2025</div>
+      <div style="font-size:13px">DE</div>
+      <div style="display:flex; justify-content:flex-end; gap:8px"><div class="btn sec" style="height:32px; padding:0 12px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Ansehen</div><div class="btn pri" style="height:32px; padding:0 12px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>PDF</div></div>
+    </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 12px 10px; border-top:1px solid #E5E9F0"><div class="small muted">Dokumente werden vom Asset Manager bereitgestellt und täglich über FWW aktualisiert.</div><div class="btn ghost" style="height:32px; padding:0 8px; font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>Alle 5 Dokumente als ZIP</div></div>
+    </div>
+  </div></div>
+  </div>
+</x-dc>
+</body>
+</html>

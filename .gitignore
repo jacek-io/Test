@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated design canvas (2 MB, rebuilt from build.mjs)
+design/**/fww-sfb-widgets.html

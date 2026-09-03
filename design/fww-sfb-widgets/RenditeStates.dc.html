@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+  body { margin:0; font-family: Inter, "Helvetica Neue", Arial, sans-serif; color:#1C2130; -webkit-font-smoothing:antialiased; font-size:13px; line-height:1.45; }
+  a { color:#2A6DF4; text-decoration:none; } a:hover { color:#1F5FE0; }
+  .num { font-variant-numeric: tabular-nums; }
+  .card { background:#FFFFFF; border:1px solid #E5E9F0; border-radius:12px; }
+  .wgt { background:#FFFFFF; border:1px solid #E5E9F0; border-radius:12px; padding:20px 24px 22px; display:flex; flex-direction:column; gap:16px; }
+  .wgt-head { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .wgt-title { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:600; color:#1C2130; }
+  .wgt-meta { display:flex; align-items:center; gap:8px; }
+  .stand { font-size:12px; color:#6B7280; display:flex; align-items:center; gap:6px; padding:0 10px; height:28px; border-radius:999px; background:#F6F8FB; white-space:nowrap; }
+  .ibtn { width:32px; height:32px; border-radius:8px; border:1px solid #E5E9F0; background:#FFFFFF; display:flex; align-items:center; justify-content:center; color:#3F4756; }
+  .ibtn.off { color:#9AA3B2; background:#F6F8FB; }
+  .pill { display:inline-flex; align-items:center; justify-content:center; height:30px; padding:0 14px; border-radius:999px; font-size:12px; font-weight:500; white-space:nowrap; }
+  .pill.g-strong { background:#4CAF50; color:#fff; }
+  .pill.g-soft { background:#E6F5E8; color:#2E7D32; }
+  .pill.gray { background:#F1F3F6; color:#3F4756; }
+  .pill.r-soft { background:#FDE7E7; color:#D64545; }
+  .seg { display:inline-flex; background:#F6F8FB; border-radius:999px; padding:3px; gap:2px; }
+  .seg > div { height:30px; padding:0 14px; border-radius:999px; display:flex; align-items:center; font-size:12px; font-weight:500; color:#3F4756; white-space:nowrap; }
+  .seg > div.on { background:#FFFFFF; color:#1C2130; font-weight:600; box-shadow:0 1px 2px rgba(28,33,48,.10); }
+  .chip { display:inline-flex; align-items:center; gap:8px; height:32px; padding:0 12px 0 10px; border-radius:999px; border:1px solid #D7DEE8; font-size:12px; font-weight:500; color:#1C2130; background:#FFFFFF; white-space:nowrap; }
+  .chip.on { border-color:#2A6DF4; background:#E8F0FE; }
+  .chip.dis { color:#9AA3B2; border-style:dashed; background:#F6F8FB; }
+  .cb { width:16px; height:16px; border-radius:4px; border:1.5px solid #D7DEE8; background:#FFFFFF; display:flex; align-items:center; justify-content:center; }
+  .cb.on { background:#2A6DF4; border-color:#2A6DF4; }
+  .dot { width:10px; height:10px; border-radius:999px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; height:36px; padding:0 18px; border-radius:999px; font-size:13px; font-weight:600; white-space:nowrap; }
+  .btn.pri { background:#2A6DF4; color:#fff; }
+  .btn.sec { background:#FFFFFF; color:#1C2130; border:1px solid #D7DEE8; }
+  .btn.ghost { background:transparent; color:#2A6DF4; }
+  .tabs { display:flex; gap:28px; border-bottom:1px solid #E5E9F0; }
+  .tabs > div { padding:10px 0 12px; font-size:12px; font-weight:500; color:#6B7280; display:flex; align-items:center; gap:6px; white-space:nowrap; }
+  .tabs > div.on { color:#2A6DF4; font-weight:600; box-shadow:inset 0 -2px 0 #2A6DF4; }
+  .neu { font-size:10px; font-weight:600; color:#2A6DF4; background:#E8F0FE; border-radius:4px; padding:1px 5px; letter-spacing:.02em; }
+  .lbl { font-size:11px; font-weight:500; color:#6B7280; text-transform:uppercase; letter-spacing:.04em; }
+  .kv { display:grid; grid-template-columns: 1fr auto; gap:0 16px; padding:10px 0; border-bottom:1px solid #E5E9F0; align-items:center; font-size:13px; }
+  .kv:last-child { border-bottom:0; }
+  .muted { color:#6B7280; }
+  .small { font-size:12px; }
+  .callout { display:inline-flex; width:22px; height:22px; border-radius:999px; background:#1C2130; color:#fff; font-size:11px; font-weight:700; align-items:center; justify-content:center; }
+  .skel { background:linear-gradient(90deg, #F6F8FB 0%, #EEF1F6 50%, #F6F8FB 100%); border-radius:6px; }
+  .th { font-size:11px; font-weight:600; color:#6B7280; text-transform:uppercase; letter-spacing:.04em; padding:0 12px 10px; }
+</style>
+</helmet>
+
+  <div style="width:1296px; padding:24px; background:#F6F8FB; display:flex; flex-direction:column; gap:36px; box-sizing:border-box">
+    <div style="display:flex; flex-direction:column; gap:4px"><div style="font-size:18px; font-weight:600">Renditeentwicklung – Zustände des Trigger-Controls</div><div class="muted">Die Daten werden nie automatisch beim Öffnen des Tabs geladen. Der Nutzer wählt Zeitraum und Vergleichsreihen und löst den Abruf bewusst aus.</div></div>
+    
+    <div style="display:flex; flex-direction:column; gap:10px">
+      <div style="display:flex; align-items:baseline; gap:12px"><span class="lbl" style="color:#2A6DF4">A · Vor dem Abruf (Pre-fetch)</span><span class="small muted">Tab geöffnet, noch keine Anfrage an FWW. Primärbutton doppelt vorhanden: in der Kontrollzeile und im Leerbereich.</span></div>
+      
+    <div class="wgt">
+      
+  <div class="wgt-head">
+    <div class="wgt-title"><span>Renditeentwicklung</span><span style="color:#9AA3B2; display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span></div>
+    <div class="wgt-meta">
+      <div class="stand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span>Datenstand 31.07.2025</span><span style="color:#D7DEE8">·</span><span>Quelle: FWW</span></div>
+      <div class="ibtn" title="Vergrößern"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      <div class="ibtn" title="Download"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg></div>
+    </div>
+  </div>
+      
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px 16px; flex-wrap:wrap">
+    <div style="display:flex; align-items:center; gap:10px"><span class="small muted">Zeitraum</span><div class="seg"><div class="">1 Monat</div><div class="">6 Monate</div><div class="">1 Jahr</div><div class="on">3 Jahre</div><div class="">5 Jahre</div><div class="">10 Jahre</div><div class="">Individuell</div></div></div>
+    <div style="margin-left:auto; display:flex"><div class="btn pri"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>Rendite laden</div></div>
+  </div>
+  
+  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap">
+    <span class="small muted" style="margin-right:2px">Vergleich mit</span>
+    <div class="chip on"><span class="cb on" style="color:#fff"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span class="dot" style="background:#EB6834"></span>FondsConsult Peergroup</div>
+    <div class="chip on"><span class="cb on" style="color:#fff"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span class="dot" style="background:#1BAF7A"></span>Benchmark (ETF)</div>
+    <div class="chip "><span class="cb " style="color:#fff"></span><span class="dot" style="background:#4A3AA7"></span>FWW Sektordurchschnitt</div>
+  </div>
+      <div style="height:300px; border:1px dashed #D7DEE8; border-radius:10px; background:#F6F8FB; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center">
+        <div style="color:#9AA3B2; opacity:.9"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 3 5-8"/></svg></div>
+        <div style="font-size:14px; font-weight:600">Zeitraum und Vergleich wählen, dann Rendite laden</div>
+        <div class="small muted" style="max-width:460px">Die Wertentwicklung wird erst auf Ihren Klick abgerufen – so bleibt jede Abfrage gezielt und schnell. Voreingestellt: 3 Jahre, Peergroup und Benchmark.</div>
+        <div class="btn pri" style="margin-top:6px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>Rendite laden</div>
+      </div>
+    </div>
+    </div>
+    
+    <div style="display:flex; flex-direction:column; gap:10px">
+      <div style="display:flex; align-items:baseline; gap:12px"><span class="lbl" style="color:#2A6DF4">B · Wird geladen</span><span class="small muted">Button gesperrt mit Spinner, Skelett-Chart bleibt maßstäblich, Steuerelemente bleiben lesbar.</span></div>
+      
+    <div class="wgt">
+      
+  <div class="wgt-head">
+    <div class="wgt-title"><span>Renditeentwicklung</span><span style="color:#9AA3B2; display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span></div>
+    <div class="wgt-meta">
+      <div class="stand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span>Datenstand 31.07.2025</span><span style="color:#D7DEE8">·</span><span>Quelle: FWW</span></div>
+      <div class="ibtn" title="Vergrößern"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      <div class="ibtn" title="Download"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg></div>
+    </div>
+  </div>
+      
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px 16px; flex-wrap:wrap">
+    <div style="display:flex; align-items:center; gap:10px"><span class="small muted">Zeitraum</span><div class="seg"><div class="">1 Monat</div><div class="">6 Monate</div><div class="">1 Jahr</div><div class="on">3 Jahre</div><div class="">5 Jahre</div><div class="">10 Jahre</div><div class="">Individuell</div></div></div>
+    <div style="margin-left:auto; display:flex"><div class="btn pri" style="opacity:.85"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 3a9 9 0 1 1-6.36 2.64" opacity=".9"/></svg>Wird geladen …</div></div>
+  </div>
+  
+  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap">
+    <span class="small muted" style="margin-right:2px">Vergleich mit</span>
+    <div class="chip on"><span class="cb on" style="color:#fff"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span class="dot" style="background:#EB6834"></span>FondsConsult Peergroup</div>
+    <div class="chip on"><span class="cb on" style="color:#fff"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span class="dot" style="background:#1BAF7A"></span>Benchmark (ETF)</div>
+    <div class="chip "><span class="cb " style="color:#fff"></span><span class="dot" style="background:#4A3AA7"></span>FWW Sektordurchschnitt</div>
+  </div>
+      <div style="height:300px; position:relative; border-radius:10px; overflow:hidden">
+        <svg width="1240" height="300" viewBox="0 0 1240 300" style="display:block; max-width:100%">
+          <line x1="44" x2="1090" y1="20" y2="20" stroke="#E5E9F0"/><line x1="44" x2="1090" y1="82" y2="82" stroke="#E5E9F0"/><line x1="44" x2="1090" y1="144" y2="144" stroke="#E5E9F0"/><line x1="44" x2="1090" y1="206" y2="206" stroke="#E5E9F0"/><line x1="44" x2="1090" y1="268" y2="268" stroke="#E5E9F0"/>
+          <rect x="4" y="14" width="30" height="10" rx="4" fill="#F6F8FB"/><rect x="4" y="76" width="30" height="10" rx="4" fill="#F6F8FB"/><rect x="4" y="138" width="30" height="10" rx="4" fill="#F6F8FB"/><rect x="4" y="200" width="30" height="10" rx="4" fill="#F6F8FB"/><rect x="4" y="262" width="30" height="10" rx="4" fill="#F6F8FB"/>
+          <path d="M44 220 C 200 200, 320 240, 480 180 S 760 120, 900 150 S 1040 90, 1090 100" fill="none" stroke="#D7DEE8" stroke-width="2.5" stroke-dasharray="6 6" opacity=".8"/>
+        </svg>
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center">
+          <div style="background:#fff; border:1px solid #E5E9F0; border-radius:999px; padding:8px 16px 8px 12px; display:flex; align-items:center; gap:10px; box-shadow:0 4px 16px rgba(28,33,48,.08); font-size:12px; color:#3F4756"><span style="color:#2A6DF4; display:flex"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 3a9 9 0 1 1-6.36 2.64" opacity=".9"/></svg></span>Rendite für 3 Jahre wird von FWW abgerufen …</div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <div style="display:flex; flex-direction:column; gap:10px">
+      <div style="display:flex; align-items:baseline; gap:12px"><span class="lbl" style="color:#2A6DF4">C · Auswahl geändert / Individueller Zeitraum</span><span class="small muted">Alter Chart bleibt abgedimmt sichtbar (kein Sprung), Hinweis nennt die neue Auswahl. Datumsfelder mit Grenzen.</span></div>
+      
+    <div class="wgt">
+      
+  <div class="wgt-head">
+    <div class="wgt-title"><span>Renditeentwicklung</span><span style="color:#9AA3B2; display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span></div>
+    <div class="wgt-meta">
+      <div class="stand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span>Datenstand 31.07.2025</span><span style="color:#D7DEE8">·</span><span>Quelle: FWW</span></div>
+      <div class="ibtn" title="Vergrößern"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      <div class="ibtn" title="Download"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg></div>
+    </div>
+  </div>
+      
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px 16px; flex-wrap:wrap">
+    <div style="display:flex; align-items:center; gap:10px"><span class="small muted">Zeitraum</span><div class="seg"><div class="">1 Monat</div><div class="">6 Monate</div><div class="">1 Jahr</div><div class="">3 Jahre</div><div class="">5 Jahre</div><div class="">10 Jahre</div><div class="on">Individuell</div></div></div>
+    <div style="margin-left:auto; display:flex"><div style="display:flex; align-items:center; gap:12px"><span class="small" style="color:#C98500; display:flex; align-items:center; gap:6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Auswahl geändert</span><div class="btn pri"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>Rendite laden</div></div></div>
+  </div>
+  
+  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap">
+    <span class="small muted" style="margin-right:2px">Vergleich mit</span>
+    <div class="chip on"><span class="cb on" style="color:#fff"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span class="dot" style="background:#EB6834"></span>FondsConsult Peergroup</div>
+    <div class="chip on"><span class="cb on" style="color:#fff"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span class="dot" style="background:#1BAF7A"></span>Benchmark (ETF)</div>
+    <div class="chip on"><span class="cb on" style="color:#fff"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span class="dot" style="background:#4A3AA7"></span>FWW Sektordurchschnitt</div>
+  </div>
+      <div style="display:flex; align-items:center; gap:10px; padding:12px 14px; border:1px solid #E5E9F0; border-radius:10px; background:#F6F8FB">
+        <span class="small muted">Individueller Zeitraum</span>
+        <div style="display:flex; align-items:center; gap:8px; height:34px; padding:0 12px; border:1px solid #D7DEE8; border-radius:8px; background:#fff; font-size:13px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span class="num">01.01.2020</span></div>
+        <span class="muted">bis</span>
+        <div style="display:flex; align-items:center; gap:8px; height:34px; padding:0 12px; border:1.5px solid #2A6DF4; border-radius:8px; background:#fff; font-size:13px; box-shadow:0 0 0 3px #E8F0FE"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span class="num">31.07.2025</span></div>
+        <span class="small muted">Max. 15 Jahre · frühester Datenpunkt 25.06.2007</span>
+      </div>
+      <div style="position:relative; border-radius:10px; overflow:hidden">
+        <div style="opacity:.35; filter:saturate(.4)"><svg width="1240" height="260" viewBox="0 0 1240 260" style="display:block; max-width:100%"><line x1="44" x2="1090" y1="226.0" y2="226.0" stroke="#E5E9F0" stroke-width="1"/><text x="34" y="230.0" text-anchor="end" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">-15 %</text><line x1="44" x2="1090" y1="173.5" y2="173.5" stroke="#D7DEE8" stroke-width="1"/><text x="34" y="177.5" text-anchor="end" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">0 %</text><line x1="44" x2="1090" y1="121.0" y2="121.0" stroke="#E5E9F0" stroke-width="1"/><text x="34" y="125.0" text-anchor="end" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">+15 %</text><line x1="44" x2="1090" y1="68.5" y2="68.5" stroke="#E5E9F0" stroke-width="1"/><text x="34" y="72.5" text-anchor="end" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">+30 %</text><line x1="44" x2="1090" y1="16.0" y2="16.0" stroke="#E5E9F0" stroke-width="1"/><text x="34" y="20.0" text-anchor="end" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">+45 %</text><text x="44.0" y="250" text-anchor="start" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">08/2022</text><text x="218.3" y="250" text-anchor="middle" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">02/2023</text><text x="392.7" y="250" text-anchor="middle" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">08/2023</text><text x="567.0" y="250" text-anchor="middle" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">02/2024</text><text x="741.3" y="250" text-anchor="middle" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">08/2024</text><text x="915.7" y="250" text-anchor="middle" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">02/2025</text><text x="1090.0" y="250" text-anchor="end" font-size="11" fill="#9AA3B2" font-family="Inter, Arial">07/2025</text><path d="M44.0 173.5 L73.1 166.4 L102.1 173.5 L131.2 176.5 L160.2 173.2 L189.3 167.9 L218.3 176.1 L247.4 158.9 L276.4 150.9 L305.5 148.6 L334.6 150.4 L363.6 136.3 L392.7 126.1 L421.7 134.5 L450.8 129.4 L479.8 132.7 L508.9 122.0 L537.9 127.8 L567.0 120.7 L596.1 116.0 L625.1 121.2 L654.2 130.3 L683.2 111.2 L712.3 91.1 L741.3 98.1 L770.4 94.7 L799.4 75.1 L828.5 79.8 L857.6 77.2 L886.6 70.5 L915.7 59.9 L944.7 61.7 L973.8 67.1 L1002.8 46.5 L1031.9 43.1 L1060.9 46.4 L1090.0 39.8" fill="none" stroke="#2A6DF4" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M44.0 173.5 L73.1 176.6 L102.1 166.2 L131.2 166.2 L160.2 160.9 L189.3 163.4 L218.3 152.4 L247.4 151.5 L276.4 151.6 L305.5 149.7 L334.6 138.9 L363.6 132.5 L392.7 132.9 L421.7 128.2 L450.8 122.1 L479.8 129.1 L508.9 119.3 L537.9 112.6 L567.0 103.5 L596.1 107.7 L625.1 110.5 L654.2 111.7 L683.2 103.0 L712.3 98.4 L741.3 90.5 L770.4 91.2 L799.4 92.4 L828.5 85.9 L857.6 91.3 L886.6 84.7 L915.7 82.3 L944.7 79.7 L973.8 81.6 L1002.8 78.2 L1031.9 85.0 L1060.9 85.0 L1090.0 86.4" fill="none" stroke="#EB6834" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M44.0 173.5 L73.1 160.3 L102.1 161.7 L131.2 167.8 L160.2 170.9 L189.3 161.2 L218.3 165.1 L247.4 165.8 L276.4 155.0 L305.5 155.5 L334.6 149.1 L363.6 137.4 L392.7 123.0 L421.7 119.1 L450.8 120.5 L479.8 118.2 L508.9 116.0 L537.9 110.6 L567.0 113.0 L596.1 102.0 L625.1 107.7 L654.2 97.5 L683.2 105.2 L712.3 106.2 L741.3 104.1 L770.4 99.7 L799.4 93.9 L828.5 86.8 L857.6 77.6 L886.6 77.3 L915.7 65.6 L944.7 73.3 L973.8 80.4 L1002.8 79.2 L1031.9 66.9 L1060.9 73.5 L1090.0 63.3" fill="none" stroke="#1BAF7A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="1090" cy="39.8" r="4.5" fill="#2A6DF4" stroke="#fff" stroke-width="2"/><text x="1102" y="43.8" font-size="12" font-family="Inter, Arial" fill="#1C2130"><tspan font-weight="600">+38,2 %</tspan><tspan fill="#6B7280" dx="6">Fonds</tspan></text><circle cx="1090" cy="63.3" r="4.5" fill="#1BAF7A" stroke="#fff" stroke-width="2"/><text x="1102" y="67.3" font-size="12" font-family="Inter, Arial" fill="#1C2130"><tspan font-weight="600">+31,5 %</tspan><tspan fill="#6B7280" dx="6">Benchmark</tspan></text><circle cx="1090" cy="86.4" r="4.5" fill="#EB6834" stroke="#fff" stroke-width="2"/><text x="1102" y="90.4" font-size="12" font-family="Inter, Arial" fill="#1C2130"><tspan font-weight="600">+24,9 %</tspan><tspan fill="#6B7280" dx="6">Peergroup</tspan></text></svg></div>
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center">
+          <div style="background:#fff; border:1px solid #E5E9F0; border-radius:12px; padding:16px 20px; display:flex; align-items:center; gap:16px; box-shadow:0 8px 24px rgba(28,33,48,.10)">
+            <div><div style="font-size:13px; font-weight:600">Die Anzeige entspricht noch der letzten Abfrage (3 Jahre)</div><div class="small muted">Laden Sie die Rendite neu, um 01.01.2020 – 31.07.2025 mit 4 Reihen zu sehen.</div></div>
+            <div class="btn pri"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>Rendite laden</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</x-dc>
+</body>
+</html>

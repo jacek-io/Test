@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+  body { margin:0; font-family: Inter, "Helvetica Neue", Arial, sans-serif; color:#1C2130; -webkit-font-smoothing:antialiased; font-size:13px; line-height:1.45; }
+  a { color:#2A6DF4; text-decoration:none; } a:hover { color:#1F5FE0; }
+  .num { font-variant-numeric: tabular-nums; }
+  .card { background:#FFFFFF; border:1px solid #E5E9F0; border-radius:12px; }
+  .wgt { background:#FFFFFF; border:1px solid #E5E9F0; border-radius:12px; padding:20px 24px 22px; display:flex; flex-direction:column; gap:16px; }
+  .wgt-head { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .wgt-title { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:600; color:#1C2130; }
+  .wgt-meta { display:flex; align-items:center; gap:8px; }
+  .stand { font-size:12px; color:#6B7280; display:flex; align-items:center; gap:6px; padding:0 10px; height:28px; border-radius:999px; background:#F6F8FB; white-space:nowrap; }
+  .ibtn { width:32px; height:32px; border-radius:8px; border:1px solid #E5E9F0; background:#FFFFFF; display:flex; align-items:center; justify-content:center; color:#3F4756; }
+  .ibtn.off { color:#9AA3B2; background:#F6F8FB; }
+  .pill { display:inline-flex; align-items:center; justify-content:center; height:30px; padding:0 14px; border-radius:999px; font-size:12px; font-weight:500; white-space:nowrap; }
+  .pill.g-strong { background:#4CAF50; color:#fff; }
+  .pill.g-soft { background:#E6F5E8; color:#2E7D32; }
+  .pill.gray { background:#F1F3F6; color:#3F4756; }
+  .pill.r-soft { background:#FDE7E7; color:#D64545; }
+  .seg { display:inline-flex; background:#F6F8FB; border-radius:999px; padding:3px; gap:2px; }
+  .seg > div { height:30px; padding:0 14px; border-radius:999px; display:flex; align-items:center; font-size:12px; font-weight:500; color:#3F4756; white-space:nowrap; }
+  .seg > div.on { background:#FFFFFF; color:#1C2130; font-weight:600; box-shadow:0 1px 2px rgba(28,33,48,.10); }
+  .chip { display:inline-flex; align-items:center; gap:8px; height:32px; padding:0 12px 0 10px; border-radius:999px; border:1px solid #D7DEE8; font-size:12px; font-weight:500; color:#1C2130; background:#FFFFFF; white-space:nowrap; }
+  .chip.on { border-color:#2A6DF4; background:#E8F0FE; }
+  .chip.dis { color:#9AA3B2; border-style:dashed; background:#F6F8FB; }
+  .cb { width:16px; height:16px; border-radius:4px; border:1.5px solid #D7DEE8; background:#FFFFFF; display:flex; align-items:center; justify-content:center; }
+  .cb.on { background:#2A6DF4; border-color:#2A6DF4; }
+  .dot { width:10px; height:10px; border-radius:999px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; height:36px; padding:0 18px; border-radius:999px; font-size:13px; font-weight:600; white-space:nowrap; }
+  .btn.pri { background:#2A6DF4; color:#fff; }
+  .btn.sec { background:#FFFFFF; color:#1C2130; border:1px solid #D7DEE8; }
+  .btn.ghost { background:transparent; color:#2A6DF4; }
+  .tabs { display:flex; gap:28px; border-bottom:1px solid #E5E9F0; }
+  .tabs > div { padding:10px 0 12px; font-size:12px; font-weight:500; color:#6B7280; display:flex; align-items:center; gap:6px; white-space:nowrap; }
+  .tabs > div.on { color:#2A6DF4; font-weight:600; box-shadow:inset 0 -2px 0 #2A6DF4; }
+  .neu { font-size:10px; font-weight:600; color:#2A6DF4; background:#E8F0FE; border-radius:4px; padding:1px 5px; letter-spacing:.02em; }
+  .lbl { font-size:11px; font-weight:500; color:#6B7280; text-transform:uppercase; letter-spacing:.04em; }
+  .kv { display:grid; grid-template-columns: 1fr auto; gap:0 16px; padding:10px 0; border-bottom:1px solid #E5E9F0; align-items:center; font-size:13px; }
+  .kv:last-child { border-bottom:0; }
+  .muted { color:#6B7280; }
+  .small { font-size:12px; }
+  .callout { display:inline-flex; width:22px; height:22px; border-radius:999px; background:#1C2130; color:#fff; font-size:11px; font-weight:700; align-items:center; justify-content:center; }
+  .skel { background:linear-gradient(90deg, #F6F8FB 0%, #EEF1F6 50%, #F6F8FB 100%); border-radius:6px; }
+  .th { font-size:11px; font-weight:600; color:#6B7280; text-transform:uppercase; letter-spacing:.04em; padding:0 12px 10px; }
+</style>
+</helmet>
+
+  <div style="width:1296px; padding:24px; background:#F6F8FB; box-sizing:border-box; display:flex; flex-direction:column; gap:24px">
+    <div style="display:flex; flex-direction:column; gap:4px"><div style="font-size:18px; font-weight:600">Wiederverwendbares Widget-Muster</div><div class="muted">Jedes FWW-Widget nutzt denselben Rahmen: Titel mit Erklärung, Datenstand und Quelle, Vergrößern, Download. Steuerelemente stehen immer in der Zeile darunter, der Inhalt beginnt erst danach.</div></div>
+    <div style="display:grid; grid-template-columns: 1fr 380px; gap:24px; align-items:start">
+      <div style="position:relative">
+        <div class="wgt" style="min-height:300px">
+          <div class="wgt-head">
+            <div class="wgt-title" style="position:relative"><span>Titel des Widgets</span><span style="color:#9AA3B2; display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span><span class="callout" style="position:absolute; left:-34px; top:-1px">1</span></div>
+            <div class="wgt-meta" style="position:relative">
+              <div class="stand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span>Datenstand 31.07.2025</span><span style="color:#D7DEE8">·</span><span>Quelle: FWW</span></div>
+              <div class="ibtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              <div class="ibtn" style="border-color:#2A6DF4; color:#2A6DF4; background:#E8F0FE"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg></div>
+              <span class="callout" style="position:absolute; left:-4px; top:-30px">2</span>
+              <span class="callout" style="position:absolute; right:44px; top:-30px">3</span>
+              <span class="callout" style="position:absolute; right:4px; top:-30px">4</span>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; position:relative"><span class="callout" style="position:absolute; left:-34px">5</span><div class="seg"><div class="on">Option A</div><div>Option B</div><div>Option C</div></div><span class="small muted">Steuerzeile: Dimension, Zeitraum, Vergleich oder Ereignis</span></div>
+          <div style="height:150px; border:1px dashed #D7DEE8; border-radius:10px; background:#F6F8FB; display:flex; align-items:center; justify-content:center; color:#9AA3B2; font-size:12px; position:relative"><span class="callout" style="position:absolute; left:-34px; top:0">6</span>Inhalt: Chart, Legende, Tabelle</div>
+        </div>
+        <div style="position:absolute; right:24px; top:66px">
+    <div style="width:236px; background:#fff; border:1px solid #E5E9F0; border-radius:10px; box-shadow:0 12px 32px rgba(28,33,48,.14); padding:6px; display:flex; flex-direction:column">
+      <div class="lbl" style="padding:8px 10px 6px">Grafik</div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:9px 10px; border-radius:6px; background:#F6F8FB"><span style="display:flex; align-items:center; gap:10px; font-size:13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Als Bild (JPEG)</span><span class="small muted">1600 px</span></div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:9px 10px; border-radius:6px"><span style="display:flex; align-items:center; gap:10px; font-size:13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Als Folie (PPTX)</span><span class="small muted">16:9</span></div>
+      <div style="height:1px; background:#E5E9F0; margin:6px 4px"></div>
+      <div class="lbl" style="padding:8px 10px 6px">Daten</div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:9px 10px; border-radius:6px"><span style="display:flex; align-items:center; gap:10px; font-size:13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Tabelle (XLSX)</span></div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:9px 10px; border-radius:6px"><span style="display:flex; align-items:center; gap:10px; font-size:13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Rohdaten (CSV)</span></div>
+      <div style="height:1px; background:#E5E9F0; margin:6px 4px"></div>
+      <div class="small muted" style="padding:6px 10px 8px; line-height:1.45">Export enthält Fondsname, ISIN, Datenstand und Quelle FWW.</div>
+    </div></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px; padding-top:6px">
+        <div style="display:flex; gap:12px; align-items:flex-start"><span class="callout">1</span><div><div style="font-size:13px; font-weight:600">Titel + Erklärung</div><div class="small" style="color:#3F4756; line-height:1.5">Ein Info-Icon öffnet einen kurzen Tooltip, was die Kennzahl misst und wie FWW sie berechnet.</div></div></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span class="callout">2</span><div><div style="font-size:13px; font-weight:600">Datenstand + Quelle</div><div class="small" style="color:#3F4756; line-height:1.5">Immer sichtbar, immer an derselben Stelle. Format TT.MM.JJJJ. Bei Rendite entspricht er dem letzten geladenen Datenpunkt. Überschreitet das Alter den Schwellwert, wird der Chip zum Frische-Hinweis:</div></div></div>
+        <div style="margin-left:34px; display:flex; flex-direction:column; align-items:flex-start; gap:6px"><div class="stand" style="background:#FEF3C7; color:#92400E"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Datenstand 28.02.2025</span><span style="opacity:.5">·</span><span>älter als 90 Tage</span></div><span class="small muted">FWW-Badge nur auf Chart-Widgets, nicht in Standardansichten</span></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span class="callout">3</span><div><div style="font-size:13px; font-weight:600">Vergrößern</div><div class="small" style="color:#3F4756; line-height:1.5">Öffnet das Widget als Pop-up (siehe Artboard „Pop-up“) mit identischen Steuerelementen und mehr Platz für Chart und Legende.</div></div></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span class="callout">4</span><div><div style="font-size:13px; font-weight:600">Download</div><div class="small" style="color:#3F4756; line-height:1.5">Ein Menü, zwei Gruppen: Grafik (JPEG, PPTX) und Daten (XLSX, CSV). Der Export übernimmt die aktuelle Auswahl des Widgets.</div></div></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span class="callout">5</span><div><div style="font-size:13px; font-weight:600">Steuerzeile</div><div class="small" style="color:#3F4756; line-height:1.5">Segment-Control für exklusive Auswahl (Dimension, Zeitraum, Ereignis), Chips mit Checkbox für Mehrfachauswahl (Vergleichsreihen).</div></div></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span class="callout">6</span><div><div style="font-size:13px; font-weight:600">Inhalt</div><div class="small" style="color:#3F4756; line-height:1.5">Linien 2 px, Raster als Haarlinie, Legende bei ≥ 2 Reihen, Endwerte direkt beschriftet. Farben folgen der Reihe, nie der Reihenfolge.</div></div></div>
+      </div>
+    </div>
+  </div>
+</x-dc>
+</body>
+</html>
