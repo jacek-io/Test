@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>C3 · Record new inquiry</title>
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+  body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; color: #0f1424; background: #f3f5f9; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; }
+  a { color: #1167fe; text-decoration: none; } a:hover { color: #0d4fc4; }
+  * { box-sizing: border-box; }
+  .h1 { font-family: "Random Grotesque Standard", Inter, system-ui, sans-serif; font-weight: 700; font-size: 36px; line-height: 1.1; letter-spacing: -0.01em; color: #14183a; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 100px; font-weight: 600; font-size: 14px; white-space: nowrap; border: 1px solid transparent; }
+  .btn-primary { background: #1167fe; color: #fff; }
+  .btn-outline { background: #fff; color: #4c556b; border-color: #e4e6eb; }
+  .btn-ghost { background: transparent; color: #1167fe; }
+  .btn-disabled { background: #e2e5ea; color: #9aa0ad; }
+  .btn-sm { height: 32px; padding: 0 14px; font-size: 13px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 8px; border-radius: 100px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .chip-topic { background: #e8f0fe; color: #1a56c9; }
+  .chip-topic-active { background: #1167fe; color: #fff; }
+  .chip-neutral { background: #f3f5f9; color: #4c556b; border: 1px solid #e4e6eb; }
+  .chip-amber { background: #fff6dc; color: #8a5a00; border: 1px solid #f5d78a; }
+  .chip-green { background: #e6f6ec; color: #1c6b3a; }
+  .chip-outline { background: #fff; color: #4c556b; border: 1px solid #e4e6eb; }
+  .label { font-size: 12px; color: #828897; }
+  .eyebrow { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #4c556b; font-weight: 500; }
+  .card { background: #fff; border: 1px solid #e4e6eb; border-radius: 8px; }
+  .input { display: flex; align-items: center; gap: 8px; height: 48px; padding: 0 16px; border: 1px solid #e4e6eb; border-radius: 4px; background: #fff; color: #828897; font-size: 14px; }
+  .input-value { color: #0f1424; }
+  .textarea { display: block; min-height: 96px; padding: 14px 16px; border: 1px solid #e4e6eb; border-radius: 4px; background: #fff; font-size: 14px; color: #0f1424; line-height: 1.5; }
+  .field-label { font-size: 14px; color: #0f1424; margin-bottom: 8px; display: flex; gap: 4px; align-items: baseline; }
+  .field-label .req { color: #4c556b; }
+  .help { font-size: 12px; color: #828897; line-height: 1.5; margin-top: 6px; }
+  .th { font-weight: 600; font-size: 14px; color: #0f1424; display: inline-flex; align-items: center; gap: 6px; }
+  .th svg { color: #828897; }
+  .pill-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #e4e6eb; border-radius: 100px; background: #fff; color: #4c556b; }
+  .select-sm { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 10px; border: 1px solid #e4e6eb; border-radius: 6px; background: #fff; font-size: 13px; color: #0f1424; }
+  .note { border-radius: 6px; padding: 12px 14px; font-size: 13px; line-height: 1.5; }
+  .note-amber { background: #fff6dc; border: 1px solid #f5d78a; color: #8a5a00; }
+  .note-info { background: #eaf2ff; border: 1px solid #c9dcff; color: #1a3d80; }
+  .note-green { background: #e6f6ec; border: 1px solid #b9e2c7; color: #1c6b3a; }
+  .tt { position: absolute; z-index: 5; background: #14183a; color: #fff; font-size: 12px; line-height: 1.4; padding: 8px 10px; border-radius: 6px; white-space: nowrap; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+  .tt::after { content: ""; position: absolute; left: 16px; top: -5px; border: 5px solid transparent; border-bottom-color: #14183a; border-top: 0; }
+ body { background: #6f7380; }</style>
+</helmet>
+
+  <div style="width: 720px; min-height: max(1560px, 100vh); background: #6f7380; display: flex; align-items: flex-start; justify-content: center; padding: 60px 0;">
+    <div style="width: 560px; background: #fff; border-radius: 16px; border: 1px solid #e4e6eb; box-shadow: 0 12px 32px rgba(0,0,0,0.25); display: flex; flex-direction: column;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 20px 8px;">
+        <div style="font-family: 'Random Grotesque Standard', Inter, sans-serif; font-weight: 700; font-size: 22px; color: #14183a;">Record new inquiry</div>
+        <span style="color: #4c556b;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+      </div>
+      <div style="padding: 0 20px 20px; display: flex; flex-direction: column; gap: 16px;">
+        <div style="font-size: 14px; color: #4c556b; line-height: 1.5;">Record a question that reached FondsConsult by email, together with the answer. The entry becomes visible to all Merkur users and appears in the dashboard news feed.</div>
+        <div style="display: flex; flex-direction: column;">
+    <div class="field-label">Fund<span class="req">(required)</span></div>
+    
+      <div class="input input-value" style="border-color: #1167fe;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4-4"/></svg> DWS Top<span style="margin-left: auto; color: #828897;">Fund universe · 4 results</span></div>
+      <div class="card" style="margin-top: 4px; padding: 6px; display: flex; flex-direction: column; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+        <div style="padding: 10px; background: #f3f5f9; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;"><div><div style="font-weight: 600;">DWS Top Dividende</div><div class="label">DE0009848119 · 5 share classes</div></div><span class="chip chip-amber"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 4V6z"/></svg> Entry exists · 5 exchanges</span></div>
+        <div style="padding: 10px; display: flex; justify-content: space-between; align-items: center;"><div><div style="font-weight: 600;">DWS Top Europe</div><div class="label">DE0009769729</div></div></div>
+        <div style="padding: 10px; display: flex; justify-content: space-between; align-items: center;"><div><div style="font-weight: 600;">DWS Top Asien</div><div class="label">DE0009769760</div></div><span class="chip chip-amber"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 4V6z"/></svg> Entry exists · 1 exchange</span></div>
+        <div style="padding: 10px; display: flex; justify-content: space-between; align-items: center;"><div><div style="font-weight: 600;">DWS Top World</div><div class="label">DE0009769794</div></div></div>
+      </div>
+    <div class="help">Funds with an existing entry are flagged. Selecting one switches the dialog to “Add question &amp; answer” – a second entry is not possible.</div>
+  </div><div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+      <div style="display: flex; flex-direction: column;">
+    <div class="field-label">Submitted by<span class="req">(required)</span></div>
+    <div class="input input-value">S. Nowak</div>
+    
+  </div>
+      <div style="display: flex; flex-direction: column;">
+    <div class="field-label">Institution<span class="req">(required)</span></div>
+    <div class="input input-value" style="justify-content: space-between;">Merkur Privatbank <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 9l6 6 6-6"/></svg></div>
+    
+  </div>
+    </div><div style="display: flex; flex-direction: column;">
+    <div class="field-label">FondsConsult analyst<span class="req">(required)</span></div>
+    <div class="input input-value" style="justify-content: space-between;"><span style="display: inline-flex; align-items: center; gap: 10px;"><span style="width: 24px; height: 24px; border-radius: 100px; background: #e8f0fe; color: #1a56c9; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center;">JW</span>J. Weber (signed in)</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 9l6 6 6-6"/></svg></div>
+    <div class="help">Pre-filled with the signed-in person; pick from the FondsConsult team as in the Analyst Tool.</div>
+  </div><div style="display: flex; flex-direction: column;">
+    <div class="field-label">Topic<span class="req">(required)</span></div>
+    
+      <div class="input input-value" style="justify-content: space-between;"><span class="chip chip-topic">Compliance</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 9l6 6 6-6"/></svg></div>
+    <div class="help">Required in this variant: the topic is both a table column and the filter. New topics via free text.</div>
+  </div><div style="display: flex; flex-direction: column;">
+    <div class="field-label">Question<span class="req">(required)</span></div>
+    <div class="textarea">Is the fund still Article 8 compliant under SFDR? We have been told the classification is under review as part of the SFDR revision.</div>
+    <div class="help">As it was asked – the question appears verbatim in the history.</div>
+  </div><div style="display: flex; flex-direction: column;">
+    <div class="field-label">Answer<span class="req">(required)</span></div>
+    <div class="textarea">Yes, classification unchanged. Current disclosure attached.</div>
+    
+  </div><div style="display: flex; flex-direction: column;">
+    <div class="field-label">Document<span class="req">(optional)</span></div>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; border: 1px dashed #c6c9cc; border-radius: 4px; font-weight: 600; color: #0f1424;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><path d="M7 17a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 8a4 4 0 0 1 1 8.9"/><path d="M12 12v8M9 15l3-3 3 3"/></svg> Choose a file or drag it here</div>
+    
+  </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-top: 1px solid #e4e6eb;"><span class="btn btn-outline">Cancel</span><span class="btn btn-primary">Save</span></div>
+    </div>
+  </div>
+</x-dc>
+</body>
+</html>

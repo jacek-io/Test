@@ -1,0 +1,374 @@
+{
+  "pages": [
+    {
+      "id": "uebersicht",
+      "name": "Overview"
+    },
+    {
+      "id": "variante-a",
+      "name": "Variant A · Minimal"
+    },
+    {
+      "id": "variante-b",
+      "name": "Variant B · Fund level"
+    },
+    {
+      "id": "variante-c",
+      "name": "Variant C · Topic-first"
+    },
+    {
+      "id": "gemeinsam",
+      "name": "Shared fixes"
+    }
+  ],
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Overview · decision matrix",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1400,
+      "page": "uebersicht"
+    },
+    {
+      "file": "A1_Liste_User_Filter.dc.html",
+      "title": "A1 · List (Merkur user), filter “Costs” active",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1024,
+      "page": "variante-a"
+    },
+    {
+      "file": "A2_Eintrag_Analyst.dc.html",
+      "title": "A2 · Expanded entry (analyst), 5 share classes",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2420,
+      "page": "variante-a"
+    },
+    {
+      "file": "A3_Neue_Anfrage.dc.html",
+      "title": "A3 · Record new inquiry",
+      "x": 0,
+      "y": 1160,
+      "w": 720,
+      "h": 1560,
+      "page": "variante-a"
+    },
+    {
+      "file": "A4_Antwort_korrigieren.dc.html",
+      "title": "A4 · Correct answer",
+      "x": 800,
+      "y": 1160,
+      "w": 720,
+      "h": 1180,
+      "page": "variante-a"
+    },
+    {
+      "file": "A5_Marker_Voranalyse.dc.html",
+      "title": "A5 · Marker in Pre-analysis + click target",
+      "x": 0,
+      "y": 2860,
+      "w": 1440,
+      "h": 1120,
+      "page": "variante-a"
+    },
+    {
+      "file": "B1_Liste_User_Filter.dc.html",
+      "title": "B1 · List (Merkur user), filter “Costs” active",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1024,
+      "page": "variante-b"
+    },
+    {
+      "file": "B2_Eintrag_Analyst.dc.html",
+      "title": "B2 · Expanded entry (analyst), 5 share classes",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2420,
+      "page": "variante-b"
+    },
+    {
+      "file": "B3_Neue_Anfrage.dc.html",
+      "title": "B3 · Record new inquiry",
+      "x": 0,
+      "y": 1160,
+      "w": 720,
+      "h": 1560,
+      "page": "variante-b"
+    },
+    {
+      "file": "B4_Antwort_korrigieren.dc.html",
+      "title": "B4 · Correct answer",
+      "x": 800,
+      "y": 1160,
+      "w": 720,
+      "h": 1180,
+      "page": "variante-b"
+    },
+    {
+      "file": "B5_Marker_Voranalyse.dc.html",
+      "title": "B5 · Marker in Pre-analysis + click target",
+      "x": 0,
+      "y": 2860,
+      "w": 1440,
+      "h": 1120,
+      "page": "variante-b"
+    },
+    {
+      "file": "C1_Liste_User_Filter.dc.html",
+      "title": "C1 · List (Merkur user), filter “Costs” active",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1024,
+      "page": "variante-c"
+    },
+    {
+      "file": "C2_Eintrag_Analyst.dc.html",
+      "title": "C2 · Expanded entry (analyst), 5 share classes",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2640,
+      "page": "variante-c"
+    },
+    {
+      "file": "C3_Neue_Anfrage.dc.html",
+      "title": "C3 · Record new inquiry",
+      "x": 0,
+      "y": 1160,
+      "w": 720,
+      "h": 1560,
+      "page": "variante-c"
+    },
+    {
+      "file": "C4_Antwort_korrigieren.dc.html",
+      "title": "C4 · Correct answer",
+      "x": 800,
+      "y": 1160,
+      "w": 720,
+      "h": 1180,
+      "page": "variante-c"
+    },
+    {
+      "file": "C5_Marker_Voranalyse.dc.html",
+      "title": "C5 · Marker in Pre-analysis + click target",
+      "x": 0,
+      "y": 2860,
+      "w": 1440,
+      "h": 1120,
+      "page": "variante-c"
+    },
+    {
+      "file": "G1_Leerzustand_User.dc.html",
+      "title": "G1 · Empty state (Merkur user)",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1024,
+      "page": "gemeinsam"
+    },
+    {
+      "file": "G2_Leerzustand_Analyst.dc.html",
+      "title": "G2 · Empty state (analyst)",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1024,
+      "page": "gemeinsam"
+    },
+    {
+      "file": "G3_Update_anfordern.dc.html",
+      "title": "G3 · Request update (own placeholder)",
+      "x": 0,
+      "y": 1160,
+      "w": 720,
+      "h": 720,
+      "page": "gemeinsam"
+    },
+    {
+      "file": "G4_Rueckfrage_stellen.dc.html",
+      "title": "G4 · Ask follow-up question (own placeholder)",
+      "x": 800,
+      "y": 1160,
+      "w": 720,
+      "h": 720,
+      "page": "gemeinsam"
+    },
+    {
+      "file": "G5_Bestaetigung_gesendet.dc.html",
+      "title": "G5 · Confirmation: message sent",
+      "x": 1600,
+      "y": 1160,
+      "w": 720,
+      "h": 700,
+      "page": "gemeinsam"
+    },
+    {
+      "file": "G6_Frage_Antwort_hinzufuegen.dc.html",
+      "title": "G6 · Add question & answer (flow D)",
+      "x": 2400,
+      "y": 1160,
+      "w": 720,
+      "h": 1460,
+      "page": "gemeinsam"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "n-a-1",
+      "page": "variante-a",
+      "x": 3120,
+      "y": 0,
+      "w": 360,
+      "text": "Topic filter (item 3): one “Topic” dropdown next to the search, ABOVE the table. The dropdown inside the expanded row goes away. With a filter active, the collapsed row shows the latest exchange MATCHING the filter (label “Latest question on topic Costs · date”). Funds without a matching exchange are hidden."
+    },
+    {
+      "id": "n-a-2",
+      "page": "variante-a",
+      "x": 3120,
+      "y": 260,
+      "w": 360,
+      "text": "ISIN (item 4): the column shows the ISIN the latest question referred to, plus a chip “+4 classes”. All share classes, with the main tranche marked, are listed in the header of the expanded entry.\n\nVersion selector (item 7): hidden on the Inquiries tab – treated as a leftover."
+    },
+    {
+      "id": "n-a-3",
+      "page": "variante-a",
+      "x": 3120,
+      "y": 520,
+      "w": 360,
+      "text": "Correction (item 8): two fields – “Corrected answer” (pre-filled) and “Correction note” (required, one sentence). Date and name are added by the system. Banner in the history = date + name + note."
+    },
+    {
+      "id": "n-a-4",
+      "page": "variante-a",
+      "x": 3120,
+      "y": 780,
+      "w": 360,
+      "text": "Marker (item 9): speech-bubble icon after the fund name, the same marker on every share class. Click → Inquiries tab, search pre-filled with the fund, entry EXPANDED and highlighted."
+    },
+    {
+      "id": "n-a-head",
+      "page": "variante-a",
+      "x": 0,
+      "y": -220,
+      "w": 1440,
+      "text": "VARIANT A · Minimal\nSmallest distance from the current mockup: every open question is resolved in the simplest way, without changing the table structure."
+    },
+    {
+      "id": "n-b-1",
+      "page": "variante-b",
+      "x": 3120,
+      "y": 0,
+      "w": 360,
+      "text": "Topic filter (item 3): chip bar with counters ABOVE the table. The filter narrows the list of funds, but the collapsed row always shows the fund’s latest exchange + badge “n matches for Costs”. When expanded, matches are highlighted, the rest dimmed, chronology kept."
+    },
+    {
+      "id": "n-b-2",
+      "page": "variante-b",
+      "x": 3120,
+      "y": 260,
+      "w": 360,
+      "text": "ISIN (item 4): no ISIN column – the entry is per fund. The “Fund” cell shows “5 share classes” and the first ISIN; search still matches every ISIN/WKN. The “Documents” column returns as a separate column with a counter.\n\nVersion selector (item 7): replaced by the status “3 funds with inquiries · last updated …”."
+    },
+    {
+      "id": "n-b-3",
+      "page": "variante-b",
+      "x": 3120,
+      "y": 520,
+      "w": 360,
+      "text": "Correction (item 8): one content field + optional reason. The previous version of the answer stays available to readers via “Show previous version”. The note is generated automatically."
+    },
+    {
+      "id": "n-b-4",
+      "page": "variante-b",
+      "x": 3120,
+      "y": 780,
+      "w": 360,
+      "text": "Marker (item 9): chip “n inquiries” after the fund name. Click → Inquiries tab with the list filtered to the fund, entry COLLAPSED (the user expands it). Duplicate fund in the dialog: warning with a choice “Add to history” / “Open entry”."
+    },
+    {
+      "id": "n-b-head",
+      "page": "variante-b",
+      "x": 0,
+      "y": -220,
+      "w": 1440,
+      "text": "VARIANT B · Fund level\nConsistently “one fund = one history”: ISIN is removed as a column, share classes are shown as a property of the fund, the marker counts exchanges."
+    },
+    {
+      "id": "n-c-1",
+      "page": "variante-c",
+      "x": 3120,
+      "y": 0,
+      "w": 360,
+      "text": "Topic filter (item 3): chip bar ABOVE the table + a dedicated “Topic” column in the row. The expanded entry groups the history by topic (chronological within a group), with topic navigation on the left and a “Show chronologically” switch. Topic becomes a required field when creating."
+    },
+    {
+      "id": "n-c-2",
+      "page": "variante-c",
+      "x": 3120,
+      "y": 260,
+      "w": 360,
+      "text": "ISIN (item 4): the column shows the main tranche’s ISIN, labelled as such (“Main tranche LD”), plus “+4 more share classes”.\n\nVersion selector (item 7): stays for consistency with the other tabs, with an info icon “Inquiries are independent of versions”."
+    },
+    {
+      "id": "n-c-3",
+      "page": "variante-c",
+      "x": 3120,
+      "y": 520,
+      "w": 360,
+      "text": "Correction (item 8): the analyst picks the type of correction (Typo / Factual correction / Addition) – the type controls the banner’s visibility; before/after is computed automatically from the text diff, the note is optional."
+    },
+    {
+      "id": "n-c-4",
+      "page": "variante-c",
+      "x": 3120,
+      "y": 780,
+      "w": 360,
+      "text": "Marker (item 9): a dedicated narrow icon column at the start of the row, in the same place in all three tables. Click → side panel with the fund’s history without leaving the tab; link “Open in Inquiries tab”. Duplicates: already flagged in the fund picker."
+    },
+    {
+      "id": "n-c-head",
+      "page": "variante-c",
+      "x": 0,
+      "y": -220,
+      "w": 1440,
+      "text": "VARIANT C · Topic-first\nTopic as the axis: column, filter, grouped history and side panel. The biggest change; scales best for long, mixed histories."
+    },
+    {
+      "id": "n-g-head",
+      "page": "gemeinsam",
+      "x": 0,
+      "y": -200,
+      "w": 1440,
+      "text": "SHARED FIXES – identical in all three variants\nItems 1 and 2: the “Submitted by” and “FondsConsult analyst” fields are in dialogs A3/B3/C3. Item 5: new empty-state copy (separate for user and analyst). Item 6: “Save correction”, “Merkur Privatbank” in the navigation, two different placeholders, the real question in the Question field. Additionally: the sent confirmation (acceptance criterion) and the dialog for adding an exchange to an existing history (flow D)."
+    },
+    {
+      "id": "n-g-1",
+      "page": "gemeinsam",
+      "x": 3200,
+      "y": 1160,
+      "w": 360,
+      "text": "The confirmation (G5) deliberately repeats that the entry does NOT change until FondsConsult publishes the answer – a requirement from the ticket (flow B, step 3)."
+    },
+    {
+      "id": "n-g-2",
+      "page": "gemeinsam",
+      "x": 3200,
+      "y": 1330,
+      "w": 360,
+      "text": "Placeholders: “Request update” asks WHAT is out of date; “Ask follow-up question” asks WHAT is unclear. Two different intentions, one mechanism (email)."
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "uebersicht"
+  }
+}
