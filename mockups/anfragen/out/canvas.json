@@ -1,0 +1,374 @@
+{
+  "pages": [
+    {
+      "id": "uebersicht",
+      "name": "Übersicht"
+    },
+    {
+      "id": "variante-a",
+      "name": "Variante A · Minimal"
+    },
+    {
+      "id": "variante-b",
+      "name": "Variante B · Fondsebene"
+    },
+    {
+      "id": "variante-c",
+      "name": "Variante C · Thema-first"
+    },
+    {
+      "id": "gemeinsam",
+      "name": "Gemeinsame Fixes"
+    }
+  ],
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Übersicht · Entscheidungsmatrix",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1400,
+      "page": "uebersicht"
+    },
+    {
+      "file": "A1_Liste_User_Filter.dc.html",
+      "title": "A1 · Liste (Merkur-Nutzer), Filter „Kosten“ aktiv",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1024,
+      "page": "variante-a"
+    },
+    {
+      "file": "A2_Eintrag_Analyst.dc.html",
+      "title": "A2 · Aufgeklappter Eintrag (Analyst), 5 Anteilsklassen",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2420,
+      "page": "variante-a"
+    },
+    {
+      "file": "A3_Neue_Anfrage.dc.html",
+      "title": "A3 · Neue Anfrage erfassen",
+      "x": 0,
+      "y": 1160,
+      "w": 720,
+      "h": 1560,
+      "page": "variante-a"
+    },
+    {
+      "file": "A4_Antwort_korrigieren.dc.html",
+      "title": "A4 · Antwort korrigieren",
+      "x": 800,
+      "y": 1160,
+      "w": 720,
+      "h": 1180,
+      "page": "variante-a"
+    },
+    {
+      "file": "A5_Marker_Voranalyse.dc.html",
+      "title": "A5 · Marker in der Voranalyse + Ziel des Klicks",
+      "x": 0,
+      "y": 2860,
+      "w": 1440,
+      "h": 1120,
+      "page": "variante-a"
+    },
+    {
+      "file": "B1_Liste_User_Filter.dc.html",
+      "title": "B1 · Liste (Merkur-Nutzer), Filter „Kosten“ aktiv",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1024,
+      "page": "variante-b"
+    },
+    {
+      "file": "B2_Eintrag_Analyst.dc.html",
+      "title": "B2 · Aufgeklappter Eintrag (Analyst), 5 Anteilsklassen",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2420,
+      "page": "variante-b"
+    },
+    {
+      "file": "B3_Neue_Anfrage.dc.html",
+      "title": "B3 · Neue Anfrage erfassen",
+      "x": 0,
+      "y": 1160,
+      "w": 720,
+      "h": 1560,
+      "page": "variante-b"
+    },
+    {
+      "file": "B4_Antwort_korrigieren.dc.html",
+      "title": "B4 · Antwort korrigieren",
+      "x": 800,
+      "y": 1160,
+      "w": 720,
+      "h": 1180,
+      "page": "variante-b"
+    },
+    {
+      "file": "B5_Marker_Voranalyse.dc.html",
+      "title": "B5 · Marker in der Voranalyse + Ziel des Klicks",
+      "x": 0,
+      "y": 2860,
+      "w": 1440,
+      "h": 1120,
+      "page": "variante-b"
+    },
+    {
+      "file": "C1_Liste_User_Filter.dc.html",
+      "title": "C1 · Liste (Merkur-Nutzer), Filter „Kosten“ aktiv",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1024,
+      "page": "variante-c"
+    },
+    {
+      "file": "C2_Eintrag_Analyst.dc.html",
+      "title": "C2 · Aufgeklappter Eintrag (Analyst), 5 Anteilsklassen",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2640,
+      "page": "variante-c"
+    },
+    {
+      "file": "C3_Neue_Anfrage.dc.html",
+      "title": "C3 · Neue Anfrage erfassen",
+      "x": 0,
+      "y": 1160,
+      "w": 720,
+      "h": 1560,
+      "page": "variante-c"
+    },
+    {
+      "file": "C4_Antwort_korrigieren.dc.html",
+      "title": "C4 · Antwort korrigieren",
+      "x": 800,
+      "y": 1160,
+      "w": 720,
+      "h": 1180,
+      "page": "variante-c"
+    },
+    {
+      "file": "C5_Marker_Voranalyse.dc.html",
+      "title": "C5 · Marker in der Voranalyse + Ziel des Klicks",
+      "x": 0,
+      "y": 2860,
+      "w": 1440,
+      "h": 1120,
+      "page": "variante-c"
+    },
+    {
+      "file": "G1_Leerzustand_User.dc.html",
+      "title": "G1 · Leerer Zustand (Merkur-Nutzer)",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1024,
+      "page": "gemeinsam"
+    },
+    {
+      "file": "G2_Leerzustand_Analyst.dc.html",
+      "title": "G2 · Leerer Zustand (Analyst)",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1024,
+      "page": "gemeinsam"
+    },
+    {
+      "file": "G3_Update_anfordern.dc.html",
+      "title": "G3 · Update anfordern (eigener Placeholder)",
+      "x": 0,
+      "y": 1160,
+      "w": 720,
+      "h": 720,
+      "page": "gemeinsam"
+    },
+    {
+      "file": "G4_Rueckfrage_stellen.dc.html",
+      "title": "G4 · Rückfrage stellen (eigener Placeholder)",
+      "x": 800,
+      "y": 1160,
+      "w": 720,
+      "h": 720,
+      "page": "gemeinsam"
+    },
+    {
+      "file": "G5_Bestaetigung_gesendet.dc.html",
+      "title": "G5 · Bestätigung: Nachricht gesendet",
+      "x": 1600,
+      "y": 1160,
+      "w": 720,
+      "h": 700,
+      "page": "gemeinsam"
+    },
+    {
+      "file": "G6_Frage_Antwort_hinzufuegen.dc.html",
+      "title": "G6 · Frage & Antwort hinzufügen (Flow D)",
+      "x": 2400,
+      "y": 1160,
+      "w": 720,
+      "h": 1460,
+      "page": "gemeinsam"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "n-a-1",
+      "page": "variante-a",
+      "x": 3120,
+      "y": 0,
+      "w": 360,
+      "text": "Filtr tematów (pkt 3): jeden dropdown „Thema” obok wyszukiwarki, NAD tabelą. Dropdown z rozwiniętego wiersza znika. Zwinięty wiersz przy aktywnym filtrze pokazuje najnowszą wymianę PASUJĄCĄ do filtra (z etykietą „Neueste Frage zum Thema Kosten · data”). Fundusze bez pasującej wymiany są ukrywane."
+    },
+    {
+      "id": "n-a-2",
+      "page": "variante-a",
+      "x": 3120,
+      "y": 260,
+      "w": 360,
+      "text": "ISIN (pkt 4): kolumna pokazuje ISIN, którego dotyczyło ostatnie pytanie („Bezugs-ISIN”), plus chip „+4 Klassen”. Wszystkie klasy z oznaczoną tranżą główną są wypisane w nagłówku rozwiniętego wpisu.\n\nSelektor wersji (pkt 7): na tabie Anfragen ukryty – traktujemy jako pozostałość."
+    },
+    {
+      "id": "n-a-3",
+      "page": "variante-a",
+      "x": 3120,
+      "y": 520,
+      "w": 360,
+      "text": "Korekta (pkt 8): dwa pola – „Korrigierte Antwort” (prefill) i „Korrekturhinweis” (obowiązkowy, jedno zdanie). Data i nazwisko dokłada system. Baner w historii = data + nazwisko + hinweis."
+    },
+    {
+      "id": "n-a-4",
+      "page": "variante-a",
+      "x": 3120,
+      "y": 780,
+      "w": 360,
+      "text": "Marker (pkt 9): ikona dymka za nazwą funduszu, ten sam marker na każdej klasie. Klik → tab Anfragen, wyszukiwarka prefill funduszem, wpis ROZWINIĘTY i podświetlony."
+    },
+    {
+      "id": "n-a-head",
+      "page": "variante-a",
+      "x": 0,
+      "y": -220,
+      "w": 1440,
+      "text": "VARIANTE A · Minimal\nNajmniejszy dystans do obecnej makiety: każdą otwartą kwestię rozstrzygamy najprościej, bez zmiany struktury tabeli."
+    },
+    {
+      "id": "n-b-1",
+      "page": "variante-b",
+      "x": 3120,
+      "y": 0,
+      "w": 360,
+      "text": "Filtr tematów (pkt 3): pasek chipów z licznikami NAD tabelą. Filtr zawęża listę funduszy, ale zwinięty wiersz zawsze pokazuje najnowszą wymianę funduszu + badge „n Treffer zu Kosten”. Po rozwinięciu trafienia są podświetlone, reszta przygaszona, chronologia zachowana."
+    },
+    {
+      "id": "n-b-2",
+      "page": "variante-b",
+      "x": 3120,
+      "y": 260,
+      "w": 360,
+      "text": "ISIN (pkt 4): kolumny ISIN nie ma – wpis jest per fundusz. Komórka „Fonds” pokazuje „5 Anteilsklassen” i pierwszy ISIN; wyszukiwarka nadal znajduje po każdym ISIN/WKN. Kolumna „Dokumente” wraca jako osobna kolumna z licznikiem.\n\nSelektor wersji (pkt 7): zastąpiony statusem „3 Fonds mit Anfragen · zuletzt aktualisiert …”."
+    },
+    {
+      "id": "n-b-3",
+      "page": "variante-b",
+      "x": 3120,
+      "y": 520,
+      "w": 360,
+      "text": "Korekta (pkt 8): jedno pole treści + opcjonalny powód. Poprzednia wersja odpowiedzi dostępna dla czytelnika przez „Vorherige Version anzeigen”. Hinweis generowany automatycznie."
+    },
+    {
+      "id": "n-b-4",
+      "page": "variante-b",
+      "x": 3120,
+      "y": 780,
+      "w": 360,
+      "text": "Marker (pkt 9): chip „n Anfragen” za nazwą funduszu. Klik → tab Anfragen z listą przefiltrowaną po funduszu, wpis ZWINIĘTY (użytkownik sam rozwija). Duplikat funduszu w modalu: ostrzeżenie z wyborem „Zur Historie hinzufügen” / „Eintrag öffnen”."
+    },
+    {
+      "id": "n-b-head",
+      "page": "variante-b",
+      "x": 0,
+      "y": -220,
+      "w": 1440,
+      "text": "VARIANTE B · Fondsebene\nKonsekwentnie „jeden fundusz = jedna historia”: usuwamy ISIN jako kolumnę, pokazujemy klasy jako właściwość funduszu, marker zlicza wymiany."
+    },
+    {
+      "id": "n-c-1",
+      "page": "variante-c",
+      "x": 3120,
+      "y": 0,
+      "w": 360,
+      "text": "Filtr tematów (pkt 3): pasek chipów NAD tabelą + osobna kolumna „Thema” w wierszu. Rozwinięty wpis grupuje historię po temacie (chronologia w grupie), z nawigacją tematów po lewej i przełącznikiem „Chronologisch anzeigen”. Temat staje się polem obowiązkowym przy tworzeniu."
+    },
+    {
+      "id": "n-c-2",
+      "page": "variante-c",
+      "x": 3120,
+      "y": 260,
+      "w": 360,
+      "text": "ISIN (pkt 4): kolumna pokazuje ISIN tranży głównej, tak opisany („LD · Haupttranche”), plus chip „+4”.\n\nSelektor wersji (pkt 7): zostaje dla spójności z innymi tabami, z ikoną info „Anfragen sind versionsunabhängig”."
+    },
+    {
+      "id": "n-c-3",
+      "page": "variante-c",
+      "x": 3120,
+      "y": 520,
+      "w": 360,
+      "text": "Korekta (pkt 8): analityk wybiera rodzaj korekty (Tippfehler / Sachliche Korrektur / Ergänzung) – rodzaj steruje widocznością banera; Vorher/Nachher wyliczane automatycznie z różnicy tekstu, notka opcjonalna."
+    },
+    {
+      "id": "n-c-4",
+      "page": "variante-c",
+      "x": 3120,
+      "y": 780,
+      "w": 360,
+      "text": "Marker (pkt 9): osobna wąska kolumna z ikoną na początku wiersza, w tym samym miejscu we wszystkich trzech tabelach. Klik → panel boczny z historią funduszu bez opuszczania taba; link „Im Tab Anfragen öffnen”. Duplikat: oznaczony już w pickerze funduszy."
+    },
+    {
+      "id": "n-c-head",
+      "page": "variante-c",
+      "x": 0,
+      "y": -220,
+      "w": 1440,
+      "text": "VARIANTE C · Thema-first\nTemat jako oś: kolumna, filtr, grupowanie historii i panel boczny. Największa zmiana, najlepiej skaluje się dla długich, mieszanych historii."
+    },
+    {
+      "id": "n-g-head",
+      "page": "gemeinsam",
+      "x": 0,
+      "y": -200,
+      "w": 1440,
+      "text": "GEMEINSAME FIXES – identyczne we wszystkich trzech wariantach\nPkt 1 i 2: pola „Eingereicht von” i „Analyst/in FondsConsult” są w modalach A3/B3/C3. Pkt 5: nowy tekst empty state (osobno dla użytkownika i analityka). Pkt 6: „Korrektur speichern”, „Merkur Privatbank” w nawigacji, dwa różne placeholdery, prawdziwe pytanie w polu Frage. Dodatkowo: ekran potwierdzenia wysyłki (kryterium akceptacji) i modal dopisywania wymiany do istniejącej historii (flow D)."
+    },
+    {
+      "id": "n-g-1",
+      "page": "gemeinsam",
+      "x": 3200,
+      "y": 1160,
+      "w": 360,
+      "text": "Potwierdzenie (G5) celowo powtarza, że wpis się NIE zmienia, dopóki FondsConsult nie opublikuje odpowiedzi – to wymóg z ticketu (flow B, pkt 3)."
+    },
+    {
+      "id": "n-g-2",
+      "page": "gemeinsam",
+      "x": 3200,
+      "y": 1330,
+      "w": 360,
+      "text": "Placeholdery: „Update anfordern” pyta, CO jest nieaktualne; „Rückfrage stellen” pyta, CO jest niejasne. Dwie różne intencje, jeden mechanizm (e-mail)."
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "uebersicht"
+  }
+}
