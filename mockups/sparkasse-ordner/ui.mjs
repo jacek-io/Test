@@ -40,8 +40,8 @@ export function nav() {
   const item = (icon, label, active, caret) => `<div style="position: relative; display: flex; align-items: center; gap: 8px; height: 69px; color: #fff; font-size: 12px; font-weight: ${active ? 600 : 400}; white-space: nowrap;">${icon}${label}${caret ? I.chevD(14) : ''}${active ? `<div style="position: absolute; left: -12px; right: -12px; bottom: 0; height: 4px; background: #fff; border-radius: 2px 2px 0 0;"></div>` : ''}</div>`;
   return `<div style="height: 69px; background: ${T.primary}; display: flex; align-items: center; padding: 0 40px; gap: 64px;">
     <div style="display: flex; align-items: center; gap: 16px; color: #fff;">${I.menu(24)}<div style="font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1;">fonds<span style="font-weight: 400;">consult</span>.</div></div>
-    <div style="display: flex; align-items: center; gap: 32px; flex: 1;">${item(I.bookmark(22), 'Meine Fondsliste')}${item(I.arrange(22), 'Mein Fondsvergleich')}${item(I.modules(22), 'Modul-Builder')}${item(I.grid(22), 'Sparkasse Leipzig', true, true)}</div>
-    <div style="display: flex; align-items: center; gap: 24px; color: #fff;"><div style="display: flex; gap: 4px; align-items: center;">${I.user(24)}${I.chevD(12)}</div><div class="btn" style="height: 40px; border: 1.5px solid #fff; color: #fff; background: transparent;">Einladen ${I.plus(18)}</div></div>
+    <div style="display: flex; align-items: center; gap: 32px; flex: 1;">${item(I.bookmark(22), 'My fund list')}${item(I.arrange(22), 'My fund comparison')}${item(I.modules(22), 'Module builder')}${item(I.grid(22), 'Sparkasse Leipzig', true, true)}</div>
+    <div style="display: flex; align-items: center; gap: 24px; color: #fff;"><div style="display: flex; gap: 4px; align-items: center;">${I.user(24)}${I.chevD(12)}</div><div class="btn" style="height: 40px; border: 1.5px solid #fff; color: #fff; background: transparent;">Invite ${I.plus(18)}</div></div>
   </div>`;
 }
 
@@ -50,7 +50,7 @@ export function moduleHeader(activeTab) {
   return `<div style="display: flex; justify-content: space-between; align-items: flex-start;">
     <div style="display: flex; align-items: center; gap: 10px; color: ${SPK}; font-weight: 700; font-size: 18px; line-height: 1.1;">
       <svg width="30" height="34" viewBox="0 0 30 34" fill="${SPK}"><circle cx="15" cy="5" r="4"/><path d="M6 12h18v6H12v2h12v12H6v-6h12v-2H6z"/></svg><div>Sparkasse<br>Leipzig</div></div>
-    <div style="display: flex; align-items: center; gap: 8px; color: ${T.text2}; font-size: 14px; margin-top: 60px;">${I.refresh(18)} Letzte Aktualisierung <b style="color: ${T.text};">22.09.2026</b></div>
+    <div style="display: flex; align-items: center; gap: 8px; color: ${T.text2}; font-size: 14px; margin-top: 60px;">${I.refresh(18)} Last update <b style="color: ${T.text};">22.09.2026</b></div>
   </div>
   <div style="display: flex; margin-top: 14px;">${tabs.map((t, i) => `<div style="position: relative; padding: 6px 16px 10px ${i === 0 ? 0 : 16}px; font-weight: 600; font-size: 14px; color: ${t === activeTab ? T.primary : T.text2}; border-left: ${i === 0 ? 'none' : `1px solid ${T.stroke}`};">${t}${t === activeTab ? `<div style="position: absolute; left: ${i === 0 ? 0 : 16}px; right: 16px; bottom: 0; height: 2px; background: ${T.primary};"></div>` : ''}</div>`).join('')}</div>`;
 }
@@ -63,7 +63,7 @@ export function page({ tab, content, minHeight = 1024, width = 1440 }) {
 }
 
 // ---------- toolbar pieces ----------
-export const search = (ph = 'Fondssuche über ISIN, WKN oder Name…', w = 420) => `<div style="display: flex; align-items: center; gap: 10px; width: ${w}px; height: 48px; padding: 0 20px; border: 1px solid ${T.stroke}; border-radius: 100px; background: #fff; color: ${T.muted}; font-size: 14px; flex: none;">${I.search(20)}${ph}</div>`;
+export const search = (ph = 'Search funds by ISIN, WKN or name…', w = 420) => `<div style="display: flex; align-items: center; gap: 10px; width: ${w}px; height: 48px; padding: 0 20px; border: 1px solid ${T.stroke}; border-radius: 100px; background: #fff; color: ${T.muted}; font-size: 14px; flex: none;">${I.search(20)}${ph}</div>`;
 export const quick = (label, { caret = true, radio = false } = {}) => `<span class="qf">${radio ? `<span style="width: 16px; height: 16px; border-radius: 100px; border: 1.5px solid ${T.muted}; display: inline-block;"></span>` : ''}${label}${caret ? I.chevD(16) : ''}</span>`;
 export const swtch = (label, on, { short } = {}) => `<span class="qf" style="gap: 10px; ${on ? `border-color: ${T.primary}; background: ${T.chipBg}; color: ${T.chipText};` : ''}">${short ? `<span>${label}</span>` : `<span>${label}</span>`}<span class="sw ${on ? 'on' : ''}"><i></i></span></span>`;
 
@@ -71,7 +71,7 @@ export const swtch = (label, on, { short } = {}) => `<span class="qf" style="gap
 export function investGroup({ lvs = false, ivv = false, compact = false } = {}) {
   const one = (label, on) => `<span style="display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border-radius: 100px; font-weight: 600; font-size: 14px; ${on ? `background: ${T.chipBg}; color: ${T.chipText};` : ''}">${label}<span class="sw ${on ? 'on' : ''}"><i></i></span></span>`;
   return `<div style="display: inline-flex; align-items: center; gap: 4px; height: 48px; padding: 0 4px 0 14px; border: 1px dashed #c4c9d4; border-radius: 100px; flex: none;">
-    <span style="font-size: 12px; font-weight: 600; color: ${T.text2}; white-space: nowrap; margin-right: 6px;">Investierbar für</span>
+    <span style="font-size: 12px; font-weight: 600; color: ${T.text2}; white-space: nowrap; margin-right: 6px;">Investable for</span>
     ${one('LVS', lvs)}${one('IVV', ivv)}
   </div>`;
 }
@@ -82,7 +82,7 @@ export const filterBtn = () => `<span class="qf">Filter ${I.filter(18)}</span>`;
 export function pager({ page = 1, pages, perPage = 10, right = true } = {}) {
   return `<div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0 16px;">
     <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; color: ${T.text2};"><span class="select-sm" style="height: 32px; width: 56px; justify-content: center;">${page}</span><span>/ ${pages}</span><div style="display: flex; gap: 8px; margin-left: 24px;"><span class="pill-icon">${I.chevL(16)}</span><span class="pill-icon">${I.chevR(16)}</span></div></div>
-    ${right ? `<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: ${T.text2};">Fonds pro Seite: <span class="select-sm" style="height: 32px;">${perPage} ${I.chevD(12)}</span></div>` : ''}
+    ${right ? `<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: ${T.text2};">Funds per page: <span class="select-sm" style="height: 32px;">${perPage} ${I.chevD(12)}</span></div>` : ''}
   </div>`;
 }
 
@@ -94,7 +94,7 @@ export function selectionChip(path, count, { compact = false } = {}) {
 
 // ---------- folder tree panel ----------
 // sel: { l1, l2, l3 } names; expanded: Set of names; searchQ: string
-export function folderPanel({ width = 300, sel = {}, expanded = new Set(), searchQ = '', height, title = 'Ordner', subtitle = `${PEERGROUP_COUNT} Peergroups`, tree = TREE, total = TOTAL, allLabel = 'Alle Fonds', levels = 3, unassigned = null, collapsible = true, annotate = false, footer = '', searchPh = 'Peergroup suchen…' } = {}) {
+export function folderPanel({ width = 300, sel = {}, expanded = new Set(), searchQ = '', height, title = 'Folders', subtitle = `${PEERGROUP_COUNT} peer groups`, tree = TREE, total = TOTAL, allLabel = 'All funds', levels = 3, unassigned = null, collapsible = true, annotate = false, footer = '', searchPh = 'Search peer group…' } = {}) {
   const q = searchQ.toLowerCase();
   const match = (n) => !q || n.toLowerCase().includes(q);
   const hl = (n) => q && n.toLowerCase().includes(q) ? n.replace(new RegExp(`(${searchQ})`, 'i'), '<mark style="background: #fff3a8; color: inherit; border-radius: 2px;">$1</mark>') : n;
@@ -108,7 +108,7 @@ export function folderPanel({ width = 300, sel = {}, expanded = new Set(), searc
     const open = q ? true : expanded.has(r.name);
     const isSel = sel.l1 === r.name && !sel.l2;
     const isAnc = sel.l1 === r.name && !!sel.l2;
-    rows.push(`<div class="tree-row ${isSel ? 'sel' : isAnc ? 'anc' : ''}"><span class="chev">${open ? I.chevD(16) : I.chevR(16)}</span>${folderIcon(open)}<span>${hl(r.name)}</span>${r.name === 'ETF' ? `<span class="chip chip-topic" style="height: 18px; font-size: 10px; padding: 0 6px;">eigener Ordner</span>` : ''}<span class="cnt">${de(r.count)}</span></div>`);
+    rows.push(`<div class="tree-row ${isSel ? 'sel' : isAnc ? 'anc' : ''}"><span class="chev">${open ? I.chevD(16) : I.chevR(16)}</span>${folderIcon(open)}<span>${hl(r.name)}</span>${r.name === 'ETF' ? `<span class="chip chip-topic" style="height: 18px; font-size: 10px; padding: 0 6px;">own top folder</span>` : ''}<span class="cnt">${de(r.count)}</span></div>`);
     if (!open) continue;
     for (const s of leaves2) {
       const sMatch = match(s.name) || (s.children || []).some((l) => match(l.name)) || match(r.name);
@@ -126,12 +126,12 @@ export function folderPanel({ width = 300, sel = {}, expanded = new Set(), searc
       }
     }
   }
-  if (unassigned) rows.push(`<div style="height: 1px; background: ${T.stroke}; margin: 8px 4px;"></div><div class="tree-row dim ${sel.l1 === '__none' ? 'sel' : ''}"><span class="chev"></span>${I.alert(18)}<span>Ohne Assetklasse</span><span class="cnt">${de(unassigned)}</span></div>`);
+  if (unassigned) rows.push(`<div style="height: 1px; background: ${T.stroke}; margin: 8px 4px;"></div><div class="tree-row dim ${sel.l1 === '__none' ? 'sel' : ''}"><span class="chev"></span>${I.alert(18)}<span>No asset class</span><span class="cnt">${de(unassigned)}</span></div>`);
   const noHit = q && rows.length === 1;
   return `<div style="width: ${width}px; flex: none; ${height ? `height: ${height}px;` : ''} background: #fff; border: 1px solid ${T.stroke}; border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; position: relative;">
-    <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 14px 10px;"><div><div style="font-weight: 700; font-size: 15px;">${title}</div><div class="label" style="margin-top: 2px;">${subtitle}</div></div>${collapsible ? `<span class="pill-icon" title="Ordner ausblenden">${I.chevL(16)}</span>` : ''}</div>
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 14px 10px;"><div><div style="font-weight: 700; font-size: 15px;">${title}</div><div class="label" style="margin-top: 2px;">${subtitle}</div></div>${collapsible ? `<span class="pill-icon" title="Hide folders">${I.chevL(16)}</span>` : ''}</div>
     <div style="margin: 0 10px 8px; display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border: 1px solid ${searchQ ? T.primary : T.stroke}; border-radius: 8px; font-size: 13px; color: ${searchQ ? T.text : T.muted};">${I.search(16)}<span style="flex: 1;">${searchQ || searchPh}</span>${searchQ ? `<span style="color: ${T.muted}; display: inline-flex;">${I.close(14)}</span>` : ''}</div>
-    <div style="padding: 0 6px 10px; display: flex; flex-direction: column; gap: 1px; overflow: hidden; flex: 1;">${rows.join('')}${noHit ? `<div class="label" style="padding: 12px 10px;">Keine passende Peergroup.</div>` : ''}${q && !noHit ? `<div class="label" style="padding: 8px 10px 0;">${rows.length - 1} Treffer · <span class="kbd">↵</span> wählt den ersten</div>` : ''}</div>
+    <div style="padding: 0 6px 10px; display: flex; flex-direction: column; gap: 1px; overflow: hidden; flex: 1;">${rows.join('')}${noHit ? `<div class="label" style="padding: 12px 10px;">No matching peer group.</div>` : ''}${q && !noHit ? `<div class="label" style="padding: 8px 10px 0;">${rows.length - 1} hits · <span class="kbd">↵</span> selects the first</div>` : ''}</div>
     ${footer ? `<div style="border-top: 1px solid ${T.stroke}; padding: 10px 14px; font-size: 12px; color: ${T.text2}; line-height: 1.45; background: #fbfcfe;">${footer}</div>` : ''}
   </div>`;
 }
@@ -141,28 +141,28 @@ export function rail({ hasSelection = true, height }) {
   return `<div style="width: 48px; flex: none; ${height ? `height: ${height}px;` : ''} background: #fff; border: 1px solid ${T.stroke}; border-radius: 12px; display: flex; flex-direction: column; align-items: center; padding: 10px 0; gap: 10px; position: relative;">
     <span class="pill-icon" style="border-color: ${T.primary}; color: ${T.primary}; position: relative;">${I.chevR(16)}${hasSelection ? `<span style="position: absolute; top: -3px; right: -3px; width: 10px; height: 10px; border-radius: 100px; background: ${T.primary}; border: 2px solid #fff;"></span>` : ''}</span>
     <span style="color: #e0a400;">${folderIcon(false, 20)}</span>
-    <div style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12px; font-weight: 600; color: ${T.text2}; letter-spacing: .04em; margin-top: 8px;">Ordner</div>
+    <div style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12px; font-weight: 600; color: ${T.text2}; letter-spacing: .04em; margin-top: 8px;">Folders</div>
   </div>`;
 }
 
 // ---------- Voranalyse table ----------
-export function voranalyseTable({ width, rows = VORANALYSE_ROWS, stripes = 'green', showIvvCol = false, compact = false } = {}) {
-  const name = compact ? 240 : 330;
+export function voranalyseTable({ width, rows = VORANALYSE_ROWS, stripes = 'green', showIvvCol = false, compact = false, nameW } = {}) {
+  const name = nameW ?? (compact ? 240 : 330);
   const small = compact ? 72 : 96;
   const pillW = compact ? 88 : 104;
   const groupsW = pillW * 5;
   const head = `
     <div style="display: flex; align-items: flex-end; padding: 0 0 8px 0;">
       <div style="width: ${name + 24}px; flex: none; padding-left: 40px;"><span class="th">Name ${I.sort(14)}</span></div>
-      <div style="width: ${small}px; flex: none; text-align: center; line-height: 1.2;"><span class="th" style="font-size: 12px;">Handlungs-<br>empfehlung</span></div>
-      <div style="width: ${small}px; flex: none; text-align: center;"><span class="th" style="font-size: 12px;">Rang</span></div>
-      <div style="width: ${small}px; flex: none; text-align: center; line-height: 1.2;"><span class="th" style="font-size: 12px;">Investierbar<br>LVS</span></div>
-      ${showIvvCol ? `<div style="width: ${small}px; flex: none; text-align: center; line-height: 1.2;"><span class="th" style="color: ${T.primary};">Investierbar<br>IVV</span><div class="chip chip-topic" style="height: 16px; font-size: 9px; padding: 0 5px; margin: 2px auto 0;">FC-1149</div></div>` : ''}
+      <div style="width: ${small}px; flex: none; text-align: center; line-height: 1.2;"><span class="th" style="font-size: 12px;">Recommen-<br>dation</span></div>
+      <div style="width: ${small}px; flex: none; text-align: center;"><span class="th" style="font-size: 12px;">Rank</span></div>
+      <div style="width: ${small}px; flex: none; text-align: center; line-height: 1.2;"><span class="th" style="font-size: 12px;">Investable<br>LVS</span></div>
+      ${showIvvCol ? `<div style="width: ${small}px; flex: none; text-align: center; line-height: 1.2;"><span class="th" style="color: ${T.primary};">Investable<br>IVV</span><div class="chip chip-topic" style="height: 16px; font-size: 9px; padding: 0 5px; margin: 2px auto 0;">FC-1149</div></div>` : ''}
       <div style="width: ${groupsW}px; flex: none; margin-left: 8px;">
-        <div style="display: flex; background: ${T.chipBg}; border-radius: 100px; padding: 3px; margin-bottom: 8px; font-size: 12px; font-weight: 600;"><span style="flex: 1.3; text-align: center; padding: 6px 0; background: ${T.primary}; color: #fff; border-radius: 100px;">Smart Fund Benchmarking ⓘ</span><span style="flex: 1; text-align: center; padding: 6px 0; color: ${T.chipText};">Rendite</span><span style="flex: 1; text-align: center; padding: 6px 0; color: ${T.chipText};">Volatilität</span></div>
-        <div style="display: flex; text-align: center; color: ${T.primary};">${['Fonds-<br>volumen', 'Track<br>Record', 'Rendite', 'Risiko', 'Aktives<br>Management'].map((h) => `<div style="width: ${pillW}px; line-height: 1.2;"><span class="th" style="color: ${T.primary}; font-size: 12px;">ⓘ ${h}</span></div>`).join('')}</div>
+        <div style="display: flex; background: ${T.chipBg}; border-radius: 100px; padding: 3px; margin-bottom: 8px; font-size: 12px; font-weight: 600;"><span style="flex: 1.3; text-align: center; padding: 6px 0; background: ${T.primary}; color: #fff; border-radius: 100px;">Smart Fund Benchmarking ⓘ</span><span style="flex: 1; text-align: center; padding: 6px 0; color: ${T.chipText};">Return</span><span style="flex: 1; text-align: center; padding: 6px 0; color: ${T.chipText};">Volatility</span></div>
+        <div style="display: flex; text-align: center; color: ${T.primary};">${['Fund<br>volume', 'Track<br>record', 'Return', 'Risk', 'Active<br>mgmt.'].map((h) => `<div style="width: ${pillW}px; line-height: 1.2;"><span class="th" style="color: ${T.primary}; font-size: 12px;">ⓘ ${h}</span></div>`).join('')}</div>
       </div>
-      <div style="width: ${pillW + 20}px; flex: none; text-align: center; line-height: 1.2;"><span class="th" style="font-size: 12px;">Fondsvol.<br>(absolut) €</span></div>
+      <div style="width: ${pillW + 20}px; flex: none; text-align: center; line-height: 1.2;"><span class="th" style="font-size: 12px;">Fund vol.<br>(abs.) €</span></div>
     </div>`;
   const pill = ([t, k]) => { const s = pillStyle(k); return `<span class="pill" style="background: ${s.bg}; color: ${s.text}; min-width: ${pillW - 16}px;">${t}</span>`; };
   const body = rows.map((r) => {
@@ -182,25 +182,25 @@ export function voranalyseTable({ width, rows = VORANALYSE_ROWS, stripes = 'gree
 
 // ---------- Fondsmatrix table ----------
 export function matrixTable({ width, rows = MATRIX_ROWS, compact = true } = {}) {
-  const cols = [['Name', 300], ['Assetklasse', 100], ['Sub-Assetklasse', 150], ['Index / Anlageschwerpunkt', 190], ['Währung', 80], ['Hedging', 80], ['Ertragsverwendung', 110], ['lfd. Kosten', 90], ['LVS (PAB)', 150], ['IVV', 90], ['', 100]];
+  const cols = [['Name', 300], ['Assetklasse', 100], ['Sub-Assetklasse', 150], ['Index / focus', 190], ['Currency', 80], ['Hedging', 80], ['Distribution', 110], ['Ongoing costs', 90], ['LVS (PAB)', 150], ['IVV', 90], ['', 100]];
   const total = cols.reduce((a, [, w]) => a + w, 0);
   const groups = `<div style="display: flex; height: 40px; align-items: center; background: ${T.bg}; border-radius: 8px 8px 0 0; font-size: 13px; color: ${T.text2}; font-weight: 500;">
     <div style="width: 300px; flex: none;"></div>
-    <div style="width: ${100 + 150 + 190 + 80 + 80}px; flex: none; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">${I.chevD(14)} Stammdaten <span class="chip chip-neutral" style="height: 18px; font-size: 10px;">immer offen · FC-1149</span></div>
-    <div style="width: ${110 + 90}px; flex: none; text-align: center;">Ausschüttung / Kosten</div>
+    <div style="width: ${100 + 150 + 190 + 80 + 80}px; flex: none; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">${I.chevD(14)} Stammdaten <span class="chip chip-neutral" style="height: 18px; font-size: 10px;">always open · FC-1149</span></div>
+    <div style="width: ${110 + 90}px; flex: none; text-align: center;">Distribution / costs</div>
     <div style="width: 240px; flex: none; text-align: center;">Status</div>
   </div>`;
   const head = `<div style="display: flex; height: 52px; align-items: center; border-bottom: 1px solid ${T.stroke};">${cols.map(([c, w]) => `<div style="width: ${w}px; flex: none; padding: 0 10px; text-align: ${c === 'Name' ? 'left' : 'center'};"><span class="th" style="color: ${T.text};">${c}${c ? ' ' + I.sort(13) : ''}</span></div>`).join('')}</div>`;
-  const status = (v) => v === 'erwerbbar' ? `<span class="chip chip-green" style="height: 24px;">${checkIcon(12, G.text)} erwerbbar</span>` : v === '–' ? `<span class="chip" style="height: 24px; background: ${R.bg}; color: ${R.text};">${crossIcon(11, R.text)} –</span>` : `<span class="chip chip-neutral" style="height: 24px;">${v}</span>`;
+  const status = (v) => v === 'eligible' ? `<span class="chip chip-green" style="height: 24px;">${checkIcon(12, G.text)} eligible</span>` : v === '–' ? `<span class="chip" style="height: 24px; background: ${R.bg}; color: ${R.text};">${crossIcon(11, R.text)} –</span>` : `<span class="chip chip-neutral" style="height: 24px;">${v}</span>`;
   const body = rows.map((r) => `<div style="display: flex; height: 72px; align-items: center; border-bottom: 1px solid ${T.stroke}; font-size: 13px; text-align: center;">
     <div style="width: 300px; flex: none; padding: 0 10px; text-align: left;"><a href="#" style="font-weight: 600; font-size: 14px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 280px;">${r.name}</a><div class="label" style="margin-top: 2px;">${r.isin} <span style="color: ${T.muted}; margin-left: 4px;">↗ Voranalyse</span></div></div>
     <div style="width: 100px; flex: none;">${r.ak || `<span class="chip chip-amber" style="height: 22px;">–</span>`}</div>
-    <div style="width: 150px; flex: none;">${r.sub || `<span class="label">ohne Zuordnung</span>`}</div>
+    <div style="width: 150px; flex: none;">${r.sub || `<span class="label">not assigned</span>`}</div>
     <div style="width: 190px; flex: none; padding: 0 8px;">${r.idx}</div>
     <div style="width: 80px; flex: none;">${r.cur}</div><div style="width: 80px; flex: none;">${r.hedge}</div>
     <div style="width: 110px; flex: none;">${r.use}</div><div style="width: 90px; flex: none;">${r.ter}</div>
     <div style="width: 150px; flex: none;">${status(r.lvs)}</div><div style="width: 90px; flex: none;">${status(r.ivv)}</div>
-    <div style="width: 100px; flex: none;"><span class="btn btn-primary" style="height: 34px; padding: 0 12px; font-size: 13px;">Aktionen ${I.modules(16)}</span></div>
+    <div style="width: 100px; flex: none;"><span class="btn btn-primary" style="height: 34px; padding: 0 12px; font-size: 13px;">Actions ${I.modules(16)}</span></div>
   </div>`).join('');
   const scrollbar = `<div style="height: 14px; background: ${T.bg}; border-radius: 8px; margin: 0 0 10px; position: relative;"><div style="position: absolute; left: 0; top: 2px; height: 10px; width: ${Math.round((width / total) * 100)}%; background: #9aa3b5; border-radius: 6px;"></div></div>`;
   return `<div style="width: ${width}px; min-width: 0; overflow: hidden; position: relative;">${scrollbar}<div class="card" style="border-radius: 8px; overflow: hidden;">${groups}${head}${body}</div>${scrollbar.replace('margin: 0 0 10px', 'margin: 10px 0 0')}</div>`;

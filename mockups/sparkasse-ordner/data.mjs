@@ -65,28 +65,28 @@ export function buildTree() {
 export const TREE = buildTree();
 export const TOTAL = TREE.reduce((a, r) => a + r.count, 0);
 export const PEERGROUP_COUNT = RAW.reduce((a, [, , l]) => a + l.length, 0);
-export const de = (n) => n.toLocaleString('de-DE');
+export const de = (n) => n.toLocaleString('en-US');
 
 // Voranalyse rows (live product style). stripe: 'green' | 'red' | null (FC-1149 red stripe = not investable for IVV)
 export const VORANALYSE_ROWS = [
-  { name: 'abrdn SICAV I – European Equity Fund', pg: 'Aktien Europa Large Cap Blend', rank: '1', of: 268, lvs: true, ivv: true, vol: ['Hoch', 'g'], tr: ['Lang', 'g'], ret: ['Gut', 'g'], risk: ['Mittel', 'n'], am: ['Gut', 'g'], size: ['1,20 Mrd.', 'g'] },
-  { name: 'Allianz Global Investors – Allianz Europe Equity Growth', pg: 'Aktien Europa Large Cap Growth', rank: '1', of: 64, lvs: true, ivv: true, vol: ['Hoch', 'g'], tr: ['Lang', 'g'], ret: ['Sehr Gut', 'gg'], risk: ['Mittel', 'n'], am: ['Sehr Gut', 'gg'], size: ['4,30 Mrd.', 'g'] },
-  { name: 'Amundi Funds – European Equity Value', pg: 'Aktien Europa Large Cap Value', rank: '2', of: 53, lvs: true, ivv: false, vol: ['Mittel', 'n'], tr: ['Lang', 'g'], ret: ['Gut', 'g'], risk: ['Mittel', 'n'], am: ['Gut', 'g'], size: ['610 Mio.', 'g'] },
-  { name: 'BlackRock Global Funds – European Special Situations', pg: 'Aktien Europa Large Cap Blend', rank: '4', of: 268, lvs: false, ivv: true, vol: ['Hoch', 'g'], tr: ['Mittel', 'n'], ret: ['Gut', 'g'], risk: ['Schlecht', 'r'], am: ['Gut', 'g'], size: ['890 Mio.', 'g'] },
-  { name: 'Comgest Growth Europe', pg: 'Aktien Europa Large Cap Growth', rank: '2', of: 64, lvs: true, ivv: true, vol: ['Hoch', 'g'], tr: ['Lang', 'g'], ret: ['Sehr Gut', 'gg'], risk: ['Gut', 'g'], am: ['Sehr Gut', 'gg'], size: ['3,90 Mrd.', 'g'] },
-  { name: 'DWS Invest European Small Cap', pg: 'Aktien Europa Small Cap', rank: '3', of: 115, lvs: true, ivv: true, vol: ['Niedrig', 'r'], tr: ['Lang', 'g'], ret: ['Mittel', 'n'], risk: ['Mittel', 'n'], am: ['Gut', 'g'], size: ['96 Mio.', 'r'] },
-  { name: 'Fidelity Funds – European Dividend Fund', pg: 'Aktien Europa Dividenden', rank: '1', of: 37, lvs: true, ivv: true, vol: ['Hoch', 'g'], tr: ['Mittel', 'n'], ret: ['Gut', 'g'], risk: ['Gut', 'g'], am: ['Gut', 'g'], size: ['2,10 Mrd.', 'g'] },
+  { name: 'abrdn SICAV I – European Equity Fund', pg: 'Aktien Europa Large Cap Blend', rank: '1', of: 268, lvs: true, ivv: true, vol: ['High', 'g'], tr: ['Long', 'g'], ret: ['Good', 'g'], risk: ['Medium', 'n'], am: ['Good', 'g'], size: ['1.20 bn', 'g'] },
+  { name: 'Allianz Global Investors – Allianz Europe Equity Growth', pg: 'Aktien Europa Large Cap Growth', rank: '1', of: 64, lvs: true, ivv: true, vol: ['High', 'g'], tr: ['Long', 'g'], ret: ['Very good', 'gg'], risk: ['Medium', 'n'], am: ['Very good', 'gg'], size: ['4.30 bn', 'g'] },
+  { name: 'Amundi Funds – European Equity Value', pg: 'Aktien Europa Large Cap Value', rank: '2', of: 53, lvs: true, ivv: false, vol: ['Medium', 'n'], tr: ['Long', 'g'], ret: ['Good', 'g'], risk: ['Medium', 'n'], am: ['Good', 'g'], size: ['610 m', 'g'] },
+  { name: 'BlackRock Global Funds – European Special Situations', pg: 'Aktien Europa Large Cap Blend', rank: '4', of: 268, lvs: false, ivv: true, vol: ['High', 'g'], tr: ['Medium', 'n'], ret: ['Good', 'g'], risk: ['Poor', 'r'], am: ['Good', 'g'], size: ['890 m', 'g'] },
+  { name: 'Comgest Growth Europe', pg: 'Aktien Europa Large Cap Growth', rank: '2', of: 64, lvs: true, ivv: true, vol: ['High', 'g'], tr: ['Long', 'g'], ret: ['Very good', 'gg'], risk: ['Good', 'g'], am: ['Very good', 'gg'], size: ['3.90 bn', 'g'] },
+  { name: 'DWS Invest European Small Cap', pg: 'Aktien Europa Small Cap', rank: '3', of: 115, lvs: true, ivv: true, vol: ['Low', 'r'], tr: ['Long', 'g'], ret: ['Medium', 'n'], risk: ['Medium', 'n'], am: ['Good', 'g'], size: ['96 m', 'r'] },
+  { name: 'Fidelity Funds – European Dividend Fund', pg: 'Aktien Europa Dividenden', rank: '1', of: 37, lvs: true, ivv: true, vol: ['High', 'g'], tr: ['Medium', 'n'], ret: ['Good', 'g'], risk: ['Good', 'g'], am: ['Good', 'g'], size: ['2,10 bn', 'g'] },
 ];
 
 // Fondsmatrix rows; assetklasse null = no assignment
 export const MATRIX_ROWS = [
-  { name: 'abrdn-Emrg Mrkt SDG Corp Bond I AccHEUR', isin: 'LU2392364308', ak: 'Renten', sub: 'High Yield und EM', idx: 'EM Corporate Bonds EUR hedged', use: 'Acc', freq: '–', month: '–', ter: '0,63 %', cur: 'EUR', hedge: 'Ja', lvs: 'erwerbbar', ivv: 'erwerbbar' },
-  { name: 'Amundi Core Stoxx Eurp 600 ETF Acc', isin: 'LU0908500753', ak: 'Aktien', sub: 'Europa', idx: 'Stoxx Europe 600', use: 'Acc', freq: '–', month: '–', ter: '0,07 %', cur: 'EUR', hedge: 'Nein', lvs: 'erwerbbar', ivv: 'erwerbbar' },
-  { name: 'Amundi EUR Corporate Bd 0-3Y ESG ETF DRC', isin: 'LU2037748774', ak: 'Renten', sub: 'Kurzläufer', idx: 'Euro Corporate Bond 0-3Y', use: 'Acc', freq: '–', month: '–', ter: '0,12 %', cur: 'EUR', hedge: 'Nein', lvs: 'erwerbbar', ivv: 'erwerbbar' },
-  { name: 'Amundi Ibex 35 ETF Acc', isin: 'FR0010655746', ak: 'Aktien', sub: 'Europa', idx: 'IBEX 35', use: 'Acc', freq: '–', month: '–', ter: '0,30 %', cur: 'EUR', hedge: 'Nein', lvs: 'nicht auf Positivliste', ivv: 'erwerbbar' },
-  { name: 'Avaron Emerging Europe E', isin: 'EE3600108874', ak: 'Aktien', sub: 'Europa', idx: 'Emerging Europe', use: 'Acc', freq: '–', month: '–', ter: '1,10 %', cur: 'EUR', hedge: 'Nein', lvs: 'erwerbbar', ivv: '–' },
-  { name: 'Bantleon Select Corporate Hy IA EUR Inc', isin: 'LU2038754953', ak: 'Renten', sub: 'Sonstige Rentenfonds', idx: 'Corporate Hybrids', use: 'Inc', freq: 'jährlich', month: 'Dez', ter: '0,60 %', cur: 'EUR', hedge: 'Nein', lvs: 'auf Negativliste', ivv: 'erwerbbar' },
-  { name: 'Deka-Nachhaltigkeit Renten CF', isin: 'LU0703710904', ak: null, sub: null, idx: '–', use: 'Inc', freq: 'jährlich', month: 'Nov', ter: '0,85 %', cur: 'EUR', hedge: 'Nein', lvs: 'erwerbbar', ivv: 'erwerbbar' },
+  { name: 'abrdn-Emrg Mrkt SDG Corp Bond I AccHEUR', isin: 'LU2392364308', ak: 'Renten', sub: 'High Yield und EM', idx: 'EM Corporate Bonds EUR hedged', use: 'Acc', freq: '–', month: '–', ter: '0.63 %', cur: 'EUR', hedge: 'Yes', lvs: 'eligible', ivv: 'eligible' },
+  { name: 'Amundi Core Stoxx Eurp 600 ETF Acc', isin: 'LU0908500753', ak: 'Aktien', sub: 'Europa', idx: 'Stoxx Europe 600', use: 'Acc', freq: '–', month: '–', ter: '0.07 %', cur: 'EUR', hedge: 'No', lvs: 'eligible', ivv: 'eligible' },
+  { name: 'Amundi EUR Corporate Bd 0-3Y ESG ETF DRC', isin: 'LU2037748774', ak: 'Renten', sub: 'Kurzläufer', idx: 'Euro Corporate Bond 0-3Y', use: 'Acc', freq: '–', month: '–', ter: '0.12 %', cur: 'EUR', hedge: 'No', lvs: 'eligible', ivv: 'eligible' },
+  { name: 'Amundi Ibex 35 ETF Acc', isin: 'FR0010655746', ak: 'Aktien', sub: 'Europa', idx: 'IBEX 35', use: 'Acc', freq: '–', month: '–', ter: '0.30 %', cur: 'EUR', hedge: 'No', lvs: 'not on positive list', ivv: 'eligible' },
+  { name: 'Avaron Emerging Europe E', isin: 'EE3600108874', ak: 'Aktien', sub: 'Europa', idx: 'Emerging Europe', use: 'Acc', freq: '–', month: '–', ter: '1.10 %', cur: 'EUR', hedge: 'No', lvs: 'eligible', ivv: '–' },
+  { name: 'Bantleon Select Corporate Hy IA EUR Inc', isin: 'LU2038754953', ak: 'Renten', sub: 'Sonstige Rentenfonds', idx: 'Corporate Hybrids', use: 'Inc', freq: 'annual', month: 'Dec', ter: '0.60 %', cur: 'EUR', hedge: 'No', lvs: 'on negative list', ivv: 'eligible' },
+  { name: 'Deka-Nachhaltigkeit Renten CF', isin: 'LU0703710904', ak: null, sub: null, idx: '–', use: 'Inc', freq: 'annual', month: 'Nov', ter: '0.85 %', cur: 'EUR', hedge: 'No', lvs: 'eligible', ivv: 'eligible' },
 ];
 
 export const MATRIX_TREE = [

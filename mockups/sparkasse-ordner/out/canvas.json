@@ -1,212 +1,224 @@
 {
   "pages": [
     {
-      "id": "uebersicht",
-      "name": "Übersicht"
+      "id": "overview",
+      "name": "Overview"
     },
     {
-      "id": "var-a",
-      "name": "Variante A · Seitenleiste"
+      "id": "voranalyse",
+      "name": "Voranalyse · folder popover"
     },
     {
-      "id": "var-b",
-      "name": "Variante B · Drawer"
+      "id": "fondsmatrix",
+      "name": "Fondsmatrix"
     },
     {
-      "id": "var-c",
-      "name": "Variante C · Ordnerpfad"
+      "id": "switches",
+      "name": "Switches · FC-1149"
     },
     {
-      "id": "gemeinsam",
-      "name": "Fondsmatrix · Schalter · FC-1149"
+      "id": "archive",
+      "name": "Archive · sidebar & drawer (not chosen)"
     }
   ],
   "artboards": [
     {
       "file": "Main.dc.html",
-      "title": "Übersicht · Entscheidungsmatrix",
-      "page": "uebersicht",
+      "title": "Overview · decision and open points",
+      "page": "overview",
       "x": 0,
       "y": 0,
       "w": 1440,
-      "h": 1500
+      "h": 1100
     },
     {
-      "file": "A1_Voranalyse_Panel_offen.dc.html",
-      "title": "A1 · Voranalyse, Panel offen, „Aktien Europa“ gewählt",
-      "page": "var-a",
+      "file": "V1_closed_selection.dc.html",
+      "title": "V1 · Popover closed, “Aktien › Aktien Europa” selected",
+      "page": "voranalyse",
       "x": 0,
       "y": 0,
       "w": 1440,
       "h": 1200
     },
     {
-      "file": "A2_Voranalyse_Panel_zu.dc.html",
-      "title": "A2 · Voranalyse, Panel zugeklappt (Leiste), Auswahl sichtbar",
-      "page": "var-a",
+      "file": "V2_open_level2.dc.html",
+      "title": "V2 · Popover open, level 2 selected, three columns",
+      "page": "voranalyse",
       "x": 1560,
       "y": 0,
       "w": 1440,
       "h": 1200
     },
     {
-      "file": "A3_Voranalyse_Panelsuche.dc.html",
-      "title": "A3 · Panel-Suche „Japan“: Treffer aufgeklappt, Rest ausgeblendet",
-      "page": "var-a",
+      "file": "V3_open_level3.dc.html",
+      "title": "V3 · Peer group selected (= today’s FCR Peergroup filter)",
+      "page": "voranalyse",
       "x": 0,
       "y": 1320,
       "w": 1440,
       "h": 1200
     },
     {
-      "file": "A4_Panel_Anatomie.dc.html",
-      "title": "A4 · Panel-Anatomie (gilt für alle Varianten)",
-      "page": "var-a",
+      "file": "V4_search.dc.html",
+      "title": "V4 · Search “Japan” inside the popover: flat hit list with paths",
+      "page": "voranalyse",
       "x": 1560,
       "y": 1320,
-      "w": 1100,
-      "h": 1120
+      "w": 1440,
+      "h": 1200
     },
     {
-      "file": "B1_Voranalyse_Drawer_offen.dc.html",
-      "title": "B1 · Voranalyse, Drawer offen über der Tabelle",
-      "page": "var-b",
+      "file": "V5_etf_folder.dc.html",
+      "title": "V5 · ETF top folder: same two levels below, prefix stripped",
+      "page": "voranalyse",
+      "x": 0,
+      "y": 2640,
+      "w": 1440,
+      "h": 1200
+    },
+    {
+      "file": "V6_all_funds.dc.html",
+      "title": "V6 · “All funds”: nothing selected, button and popover state",
+      "page": "voranalyse",
+      "x": 1560,
+      "y": 2640,
+      "w": 1440,
+      "h": 1200
+    },
+    {
+      "file": "V7_anatomy.dc.html",
+      "title": "V7 · Anatomy and interaction rules",
+      "page": "voranalyse",
+      "x": 0,
+      "y": 3960,
+      "w": 1300,
+      "h": 1300
+    },
+    {
+      "file": "F1_closed.dc.html",
+      "title": "F1 · Fondsmatrix, popover closed, “Aktien › Europa” selected, export shows the folder",
+      "page": "fondsmatrix",
       "x": 0,
       "y": 0,
       "w": 1440,
       "h": 1200
     },
     {
-      "file": "B2_Voranalyse_Drawer_zu.dc.html",
-      "title": "B2 · Voranalyse, Drawer zu: „Ordner“-Button + Pfad-Chip",
-      "page": "var-b",
+      "file": "F2_open.dc.html",
+      "title": "F2 · Fondsmatrix popover: Assetklasse › Sub-Assetklasse, “No asset class” at the bottom",
+      "page": "fondsmatrix",
       "x": 1560,
       "y": 0,
       "w": 1440,
       "h": 1200
     },
     {
-      "file": "C1_Voranalyse_Popover_offen.dc.html",
-      "title": "C1 · Voranalyse, Ordnerpfad-Popover offen (3 Spalten)",
-      "page": "var-c",
+      "file": "F3_unassigned.dc.html",
+      "title": "F3 · “No asset class” selected: funds without an assignment",
+      "page": "fondsmatrix",
       "x": 0,
-      "y": 0,
+      "y": 1320,
       "w": 1440,
       "h": 1200
     },
     {
-      "file": "C2_Voranalyse_Popover_zu.dc.html",
-      "title": "C2 · Voranalyse, Pfad-Button zeigt die Auswahl",
-      "page": "var-c",
-      "x": 1560,
-      "y": 0,
-      "w": 1440,
-      "h": 1200
-    },
-    {
-      "file": "G1_Fondsmatrix_Panel.dc.html",
-      "title": "G1 · Fondsmatrix mit Panel (Assetklasse › Sub-Assetklasse, „Ohne Assetklasse“)",
-      "page": "gemeinsam",
+      "file": "S1_switches.dc.html",
+      "title": "S1 · Switch states and labels",
+      "page": "switches",
       "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 1260
-    },
-    {
-      "file": "G2_Schalter.dc.html",
-      "title": "G2 · Schalterzustände und Beschriftung",
-      "page": "gemeinsam",
-      "x": 1560,
       "y": 0,
       "w": 1100,
       "h": 780
     },
     {
-      "file": "G3_FC1149_Konflikte.dc.html",
-      "title": "G3 · FC-1149 im Panel-Layout: IVV-Spalte, roter Streifen, Namensbreite",
-      "page": "gemeinsam",
+      "file": "S2_fc1149.dc.html",
+      "title": "S2 · FC-1149 in the chosen layout: IVV column and red stripe",
+      "page": "switches",
+      "x": 1220,
+      "y": 0,
+      "w": 1440,
+      "h": 1200
+    },
+    {
+      "file": "X1_sidebar_open.dc.html",
+      "title": "X1 · Sidebar direction (not chosen): panel open",
+      "page": "archive",
       "x": 0,
-      "y": 1400,
+      "y": 0,
+      "w": 1440,
+      "h": 1200
+    },
+    {
+      "file": "X2_sidebar_rail.dc.html",
+      "title": "X2 · Sidebar direction (not chosen): collapsed rail",
+      "page": "archive",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1200
+    },
+    {
+      "file": "X3_drawer.dc.html",
+      "title": "X3 · Drawer direction (not chosen)",
+      "page": "archive",
+      "x": 0,
+      "y": 1320,
       "w": 1440,
       "h": 1200
     }
   ],
   "annotations": [
     {
-      "id": "n-a-head",
-      "page": "var-a",
+      "id": "n-v-head",
+      "page": "voranalyse",
       "x": 0,
       "y": -220,
       "w": 1440,
-      "text": "VARIANTE A · Seitenleiste (empfohlen)\nDas Panel steht dauerhaft links neben der Tabelle (300 px) und klappt per Chevron auf eine 48-px-Leiste zusammen. Die Tabelle fließt nach: bei offenem Panel sind alle Spalten ohne horizontales Scrollen sichtbar, die Name-Spalte wird kürzer. Zustand (auf/zu, Auswahl) bleibt pro Nutzer gespeichert."
+      "text": "VORANALYSE · folder popover\nThe path button replaces the “FCR Peergroup” quick filter in the same spot. Boards V1–V6 are the states the ticket asks for: selection visible when closed (V1), three levels (V2, V3), search (V4), ETF top folder (V5), “All funds” (V6). V7 explains the rules. The table stays at its current width in every state; the popover floats above it while open."
     },
     {
-      "id": "n-a-1",
-      "page": "var-a",
+      "id": "n-v-1",
+      "page": "voranalyse",
       "x": 3120,
       "y": 0,
       "w": 360,
-      "text": "Auswahl bei geschlossenem Panel (A2): der Pfad-Chip mit × in der Zeile „Aktuelle Auswahl“ über der Tabelle und der blaue Punkt an der Leiste. Die Filterleiste bleibt unverändert; der heutige Quick-Filter „FCR Peergroup“ entfällt."
+      "text": "Selection when closed: the button itself is the display (path + count + ×), and the “Current selection” line above the table repeats it next to the table it applies to."
     },
     {
-      "id": "n-a-2",
-      "page": "var-a",
+      "id": "n-v-2",
+      "page": "voranalyse",
       "x": 3120,
-      "y": 260,
+      "y": 1320,
       "w": 360,
-      "text": "Schalter: „Investierbar für LVS / IVV“ als Gruppe rechts neben „Fondsgesellschaft“. Ein Schalter aktiv = nur für diese Liste investierbare Fonds; beide aktiv = Schnittmenge. Ersetzt „Nur investierbare Fonds“."
+      "text": "Search finds peer groups and level-2 folders, not funds. Hits show their path so “Japan” under Aktien and under ETF are told apart."
     },
     {
-      "id": "n-a-3",
-      "page": "var-a",
-      "x": 1560,
-      "y": 2320,
-      "w": 480,
-      "text": "Öffnen vs. Auswählen ist die zentrale Regel des Panels: Chevron klappt, Name wählt. Das gilt in allen drei Varianten identisch, deshalb nur einmal gezeichnet."
-    },
-    {
-      "id": "n-b-head",
-      "page": "var-b",
+      "id": "n-f-head",
+      "page": "fondsmatrix",
       "x": 0,
       "y": -220,
       "w": 1440,
-      "text": "VARIANTE B · Drawer\nDie Tabelle behält immer die volle Breite. Der Baum kommt auf Knopfdruck („Ordner“) von links über die Tabelle, mit Abdunklung. Auswahl wirkt sofort im Hintergrund; „Fertig“, Klick außerhalb oder Esc schließt. Vorteil: nichts wird schmaler. Nachteil: Auswahl und Ergebnis sieht man nicht gleichzeitig, und der Kunde wollte den Baum als dauerhafte Navigation."
+      "text": "FONDSMATRIX\nSame button and popover with two levels (Assetklasse › Sub-Assetklasse). Funds without an Assetklasse in the import sheet sit in a “No asset class” entry at the bottom of column 1, dimmed, so no fund drops out of the tree (F2, F3). The export button carries the folder in its label because FC-1149 exports only the open folder. The Fondsmatrix has no quick filters today, so the switches sit directly after the button."
     },
     {
-      "id": "n-b-1",
-      "page": "var-b",
-      "x": 3120,
-      "y": 0,
-      "w": 360,
-      "text": "Geschlossener Zustand (B2): der „Ordner“-Button sitzt direkt hinter der Suche und trägt Pfad, Zähler und × selbst. Diese Variante ist gleichzeitig das Verhalten von A unterhalb ~1280 px Breite."
-    },
-    {
-      "id": "n-c-head",
-      "page": "var-c",
-      "x": 0,
-      "y": -220,
-      "w": 1440,
-      "text": "VARIANTE C · Ordnerpfad\nKein Panel neben der Tabelle. Der Pfad-Button in der Filterleiste (an der Stelle des heutigen Quick-Filters „FCR Peergroup“) zeigt die Auswahl als Breadcrumb und öffnet ein Popover mit drei Spalten (Miller-Spalten). Kleinster Eingriff ins heutige Layout, aber der Baum ist nie dauerhaft sichtbar, was dem Wunsch des Kunden („Ordnerstruktur links neben der Tabelle“) widerspricht."
-    },
-    {
-      "id": "n-g-head",
-      "page": "gemeinsam",
+      "id": "n-s-head",
+      "page": "switches",
       "x": 0,
       "y": -200,
       "w": 1440,
-      "text": "GEMEINSAM – gilt für alle Varianten\nG1 Fondsmatrix: dasselbe Panel mit zwei Ebenen (Assetklasse › Sub-Assetklasse); Fonds ohne Assetklasse landen im letzten Eintrag „Ohne Assetklasse“. Export-Button trägt die Ordnerauswahl im Label, weil laut FC-1149 nur der offene Ordner exportiert wird. G2 Schalter in vier Zuständen. G3 FC-1149-Check mit IVV-Spalte und rotem Streifen in der schmaleren Tabelle."
+      "text": "SWITCHES · FC-1149\nS1 shows the four switch states and the result line. S2 places the IVV column and the red stripe from FC-1149 into the chosen layout; because the table keeps its full width, the earlier concern about the name column falls away."
     },
     {
-      "id": "n-g-1",
-      "page": "gemeinsam",
-      "x": 1560,
-      "y": 900,
-      "w": 480,
-      "text": "Fondsmatrix hat heute keine Schalter. Die Gruppe „Investierbar für LVS / IVV“ steht dort direkt neben der Suche, weil es keine weiteren Quick-Filter gibt; die Zähler im Panel reagieren wie in der Voranalyse."
+      "id": "n-x-head",
+      "page": "archive",
+      "x": 0,
+      "y": -200,
+      "w": 1440,
+      "text": "ARCHIVE – directions reviewed and not chosen\nKept for the record: the sidebar (X1, X2) narrows the table to 1044 px and mirrors the client’s prototype; the drawer (X3) hides the table while browsing. The chosen path-button popover is on the Voranalyse page."
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "uebersicht"
+    "page": "overview"
   }
 }
